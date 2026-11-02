@@ -1,69 +1,91 @@
 # STATUS — Estado verificável do BMO
 
-- **Data desta revisão documental:** 2026-11-02
-- **Repositório inspecionado:** `resende-g/BMO`
-- **Branch remota consultada:** `main`
-- **Estado geral:** documentação arquitetural publicada; não há código de aplicação versionado na árvore remota inspecionada.
-- **Limite da inspeção:** a revisão consultou a árvore e os arquivos da branch remota. O clone local, seu `git status`, arquivos não rastreados e alterações ainda não publicadas não foram inspecionados.
+- **Data desta revisão:** 2026-11-02
+- **Repositório:** `resende-g/BMO`
+- **Branch de atualização documental:** `docs/model-lab-qlora-smoke-20261102`
+- **Estado geral:** documentação arquitetural publicada; código de aplicação e scripts do protótipo continuam fora da árvore Git consultada.
+- **Modelo-base definitivo:** ainda não selecionado.
+- **Limite da inspeção:** esta atualização registra resultados fornecidos pelo mantenedor e inspeciona arquivos da branch remota. Não inspeciona o clone local, arquivos não rastreados, logs locais ou integridade dos artefatos locais.
 
-## 1. Estado do repositório remoto
+## 1. Estado do repositório
 
-A árvore Git consultada antes desta publicação continha somente `README.md` e `STATUS.md`. Este commit acrescenta a documentação arquitetural listada no README. Não foram encontrados código-fonte, scripts, manifests de dependências, testes, configuração de containers ou workflows de CI na árvore remota consultada.
+O repositório contém documentação de arquitetura, segurança, RAG, avaliação, roadmap, skills e identidade visual. Não há implementação de aplicação versionada na árvore remota consultada. Os scripts de treinamento e avaliação mencionados neste documento permanecem no ambiente local do mantenedor e não foram adicionados ao Git.
 
-O README original informa que os scripts do protótipo permanecem em uma pasta local e ainda não foram incorporados. A documentação arquitetural desta revisão foi publicada na branch `main`; as implementações descritas continuam sendo propostas e não funcionalidades disponíveis.
+As funcionalidades descritas nos documentos arquiteturais são propostas ou protótipos externos, salvo quando explicitamente identificadas como implementadas e verificadas.
 
-## 2. Estados por componente
+## 2. Estado por componente
 
 | Componente/capacidade | Estado | Evidência e limite |
 |---|---|---|
-| Documentação inicial | Implementado | README e STATUS já estavam na branch remota |
-| d-BMO | Planejado | Nenhuma implementação encontrada na árvore |
-| BMO Brain | Planejado | Nenhuma implementação encontrada na árvore |
-| BMO Heart | Planejado | Nenhuma implementação encontrada na árvore; dados pessoais não devem ser publicados |
-| BMO Knowledge | Planejado / protótipo externo relatado | Scripts externos mencionados em documentação anterior, não versionados |
-| BMO Model Lab | Planejado | Há relato histórico de teste LoRA, sem harness versionado |
+| Documentação arquitetural | Publicada | Documentos Markdown na branch principal |
+| d-BMO | Planejado | Nenhuma implementação de interface versionada |
+| BMO Brain | Planejado | Nenhuma implementação de orquestração versionada |
+| BMO Heart | Planejado | Nenhuma implementação versionada; dados pessoais não devem ser publicados |
+| BMO Knowledge | Protótipo externo relatado; integração versionada planejada | Scripts externos não estão no repositório; RAG ainda precisa de avaliação reproduzível |
+| BMO Model Lab | Protocolo documentado; experimento local concluído | Registro do smoke test e A/B em `experiments/2026-11-02-qwen3-1.7b-qlora-smoke.md`; harness não versionado |
 | Hermes Agent | Em avaliação | Nenhuma integração versionada |
-| Ollama | Testado historicamente | Uso relatado em conversas; runtime e versão atuais não foram revalidados nesta revisão |
+| Ollama | Testado historicamente | Runtime e versão atuais não revalidados nesta revisão |
 | Docker | Planejado | Nenhuma configuração encontrada |
 | NetBird | Configurado historicamente | Conectividade atual não revalidada |
-| Skills | Planejado | Nenhum manifesto ou executor versionado |
-| Licença | Pendente | Nenhum arquivo de licença encontrado |
+| Skills | Planejado | Nenhum executor versionado |
+| Licença | Pendente | Decisão ainda não registrada |
 
-## 3. Registros históricos não reexecutados
+## 3. Experimentos de modelos
 
-Os resultados a seguir foram registrados em documentação anterior com origem em saídas compartilhadas pelo mantenedor. Não foram reexecutados nesta revisão e não devem ser tratados como benchmark atual.
+### 3.1 Registros históricos anteriores
+
+Os resultados abaixo foram registrados em documentação anterior e não foram reexecutados nesta revisão. Não são benchmarks comparáveis.
 
 | Área | Resultado histórico | Limitação |
 |---|---|---|
-| `qwen2.5:3b` | Uma resposta em 3,384 s | Uma pergunta isolada; não mede qualidade nem é benchmark comparável |
+| `qwen2.5:3b` | Uma resposta em 3,384 s | Uma pergunta isolada |
 | `qwen3:1.7b` | Uma resposta em 2,347 s | Uma pergunta isolada sob condições não demonstradas como idênticas |
-| Consulta ao Manifesto | Uma consulta local revisada | Revisão encontrou erro factual e afirmações sem suporte suficiente |
-| Isolamento de coleções | Validador relatou separação e canário sintético | Embeddings simulados; não valida a versão implantada com embeddings reais |
-| LoRA de fumaça | 2 passos, loss registrada 4,6103 e pico de VRAM 2,13 GiB | Demonstra execução de pipeline, não melhoria de qualidade |
+| Consulta ao Manifesto | Uma consulta local revisada | Foram identificados erro factual e afirmações sem suporte suficiente |
+| Isolamento de coleções | Validador relatou separação e canário sintético | Embeddings simulados; não valida versão implantada com embeddings reais |
+| LoRA anterior | 2 passos, loss 4,6103 e pico de VRAM 2,13 GiB | Smoke test, não demonstra ganho de qualidade |
+
+### 3.2 QLoRA smoke test e avaliação A/B — 2026-11-02
+
+Foi concluído um teste técnico de QLoRA no Qwen3-1.7B e uma avaliação exploratória de oito perguntas no modelo-base e no modelo com adapter.
+
+- Base experimental: `Qwen/Qwen3-1.7B`, revisão `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`.
+- Adapter: `qwen3-1.7b-manifesto-smoke-v3`; SHA-256 `2c707c951ef31ff8d3d31107ca581cfd61bacdc34afb85668af8a291cdbcb040`.
+- Dataset de treinamento: 8 exemplos; SHA-256 `6264401aa997c90daed7062aff53305d1e3d055f44fd60902694d44fd3e6bbdb`.
+- Método: QLoRA NF4 4-bit; 2 passos; 8.716.288 parâmetros treináveis (aprox. 0,504%); loss final 4,376685; pico de VRAM reportado 2,13 GiB.
+- Avaliação: 8 prompts em cada condição (16 gerações); todas concluíram sem erro.
+- Resultado qualitativo: não foi observada melhora consistente do adapter. Persistiram erros de fidelidade textual, interpretação e extrapolação. Os dois modelos se abstiveram adequadamente em duas perguntas sem evidência.
+
+**Ressalva metodológica:** a avaliação A/B utilizou tokenizer/template diferentes entre condições: o tokenizer do modelo-base em A_base e o tokenizer salvo no diretório do adapter em B_adapter. Como o adapter contém um template personalizado para treinamento, a comparação está confundida e não permite atribuir diferenças ao LoRA. Além disso, respostas foram truncadas pelo limite de 220 tokens. A avaliação deve ser repetida com tokenizer/template idênticos e limite de geração maior.
+
+O Qwen3-1.7B foi utilizado apenas como base experimental para validar o pipeline. **Não é o modelo-base definitivo do BMO.** O JSON integral, o dataset e o adapter permanecem locais; não foram publicados no repositório.
+
+Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smoke.md).
 
 ## 4. Riscos e pendências prioritárias
 
-1. **Isolamento documental:** houve relato de mistura anterior entre coleção pessoal e consulta pública. A correção relatada precisa ser revalidada com embeddings reais e na versão efetivamente implantada antes de inserir qualquer conteúdo pessoal.
-2. **Logs:** um script antigo teria gravado respostas em log JSON. O conteúdo dos demais logs não foi verificado; revisar localmente antes de publicar ou compartilhar.
-3. **Reprodutibilidade:** código, dependências, fixtures públicas/sintéticas e conjunto de 12 perguntas ainda não estão no repositório.
-4. **Avaliação:** o conjunto de 12 perguntas (8 respondíveis e 4 sem resposta) e os critérios de Hit@4/abstenção ainda não foram executados integralmente conforme protocolo reproduzível.
-5. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
-6. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada de ponta a ponta.
-7. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
-8. **Licença:** decisão pendente. Não presumir licença do projeto ou compatibilidade de dependências.
+1. **Isolamento documental:** houve relato de mistura anterior entre coleção pessoal e consulta pública. Revalidar com embeddings reais e na versão implantada antes de inserir conteúdo pessoal.
+2. **Logs:** um script antigo teria gravado respostas em log JSON. Revisar localmente antes de publicar ou compartilhar.
+3. **Reprodutibilidade:** código, dependências, fixtures públicas/sintéticas e harness ainda não estão versionados.
+4. **Avaliação de RAG:** o conjunto de 12 perguntas (8 respondíveis e 4 sem resposta) e critérios de Hit@4/abstenção ainda precisam de execução reproduzível.
+5. **Avaliação de fine-tuning:** repetir A/B com tokenizer/template idênticos, limite de geração maior e rubrica explícita.
+6. **Seleção de modelo:** comparar candidatos adequados ao hardware; Qwen3-1.7B não foi selecionado como base definitiva.
+7. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
+8. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada.
+9. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
+10. **Licença:** decisão pendente; não presumir licença do projeto ou compatibilidade de dependências.
 
 ## 5. Próximas ações
 
-A ordem e os critérios detalhados estão em [ROADMAP.md](ROADMAP.md). Prioridades imediatas:
+- [ ] Conferir clone local, branch, `git status`, arquivos rastreados e diferenças não publicadas.
+- [ ] Revisar logs e artefatos locais sem copiar dados privados para o Git.
+- [ ] Corrigir tokenizer/template da avaliação A/B e repetir o teste.
+- [ ] Avaliar candidatos alternativos de modelo separadamente.
+- [ ] Revalidar isolamento de coleções com dados sintéticos e embeddings reais.
+- [ ] Versionar somente código e fixtures autorizados.
+- [ ] Executar avaliação RAG controlada e documentar resultados.
+- [ ] Testar restauração de backup.
+- [ ] Selecionar licença e revisar dependências antes de publicação.
 
-- conferir o clone local e alterações não publicadas;
-- revisar logs e artefatos locais sem copiar dados privados para o Git;
-- revalidar isolamento de coleções com dados sintéticos e embeddings reais;
-- versionar apenas código e fixtures autorizados;
-- executar avaliação controlada e documentar resultados;
-- testar restauração de backup;
-- selecionar licença e revisar dependências antes de publicação.
+## 6. Proveniência
 
-## 6. Proveniência desta revisão
-
-A árvore remota foi consultada em 2026-11-02 e atualizada por um commit documental nesta data. Nenhum teste de aplicação, inferência, RAG, rede, backup ou sandbox foi executado nesta revisão. Nenhum dado local foi inspecionado. A ausência de arquivos na árvore remota não permite concluir que não existam protótipos no computador do mantenedor.
+Os resultados de QLoRA e A/B foram transcritos das saídas e do JSON fornecidos pelo mantenedor em 2026-11-02. Não foram reexecutados durante a atualização documental. Nenhum teste de aplicação, inferência, RAG, rede, backup ou sandbox foi executado nesta revisão. Nenhum dado local foi inspecionado. A atualização não altera o código nem os artefatos de treinamento no computador do mantenedor.
