@@ -1,8 +1,8 @@
-# d-BMO (Dark BMO)
+# d-BMO
 
 **d-BMO (BE MORE DARK)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
 
-**d-BMO** é o nome do projeto; **Dark BMO** é a forma por extenso. A camada de interface e identidade visual é a **d-BMO Interface**. Os módulos internos usam o prefixo BMO: **BMO Brain** (orquestração), **BMO Heart** (memória pessoal), **BMO Knowledge** (RAG) e **BMO Model Lab** (avaliação).
+**d-BMO** é o nome padrão do projeto; **BE MORE DARK** é a forma por extenso. A camada de interface e identidade visual é a **d-BMO Interface**. Os módulos internos usam o prefixo BMO: **BMO Brain** (orquestração), **BMO Heart** (memória pessoal), **BMO Knowledge** (RAG) e **BMO Model Lab** (avaliação).
 
 > **Estado atual do repositório:** documentação inicial. Não há código de aplicação versionado nesta branch. Os scripts do protótipo mencionados em `STATUS.md` permanecem externos ao repositório. Portanto, clonar este projeto ainda não instala nem executa um assistente d-BMO.
 

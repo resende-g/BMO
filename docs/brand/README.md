@@ -1,6 +1,6 @@
 # Identidade visual do d-BMO
 
-Esta pasta reúne a documentação normativa da identidade visual e do personagem do projeto d-BMO (Dark BMO), aplicada à camada de apresentação (d-BMO Interface).
+Esta pasta reúne a documentação normativa da identidade visual e do personagem do projeto d-BMO (BE MORE DARK), aplicada à camada de apresentação (d-BMO Interface).
 
 ## Documentos
 

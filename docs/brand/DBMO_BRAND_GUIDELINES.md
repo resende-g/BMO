@@ -6,11 +6,11 @@
 
 ## 1. Propósito
 
-O d-BMO (Dark BMO) é o nome do projeto e também sua identidade visual e seu personagem. A camada de apresentação é a d-BMO Interface. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
+O d-BMO (BE MORE DARK) é o nome padrão do projeto e também sua identidade visual e seu personagem. A camada de apresentação é a d-BMO Interface. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
 
 Assinatura verbal:
 
-> **d-BMO — DARK BMO**  
+> **d-BMO — BE MORE DARK**  
 > LOCAL INTELLIGENCE. PRIVATE BY DESIGN.
 
 O slogan expressa a intenção arquitetural do projeto. Não constitui, por si só, garantia de que toda operação já esteja implementada localmente.
@@ -52,7 +52,7 @@ O desenho vetorial definitivo ainda precisa ser produzido e revisado. Não infer
 ### 4.3 Logotipo
 
 Grafia principal: `d-BMO`.  
-Identificação complementar: `DARK BMO`.
+Identificação complementar (forma por extenso): `BE MORE DARK`.
 
 Não distorcer caracteres, inventar variações ortográficas ou alterar o slogan. Versões horizontal, vertical, monocromática e reduzida devem derivar do mesmo desenho-mestre.
 
