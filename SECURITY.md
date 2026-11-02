@@ -2,14 +2,14 @@
 
 ## 1. Objetivo e escopo
 
-Esta política define requisitos mínimos para desenvolvimento, execução, testes e publicação do Beemon (BMO). Aplica-se ao código, modelos, datasets, memória, documentos, ferramentas, integrações e infraestrutura.
+Esta política define requisitos mínimos para desenvolvimento, execução, testes e publicação do d-BMO. Aplica-se ao código, modelos, datasets, memória, documentos, ferramentas, integrações e infraestrutura.
 
 A política é normativa para o projeto. Uma funcionalidade não deve ser considerada concluída se violar estes controles.
 
 ## 2. Princípios
 
 1. Dados pessoais permanecem locais por padrão.
-2. Dados profissionais, de empregadores, clientes ou terceiros não devem ser incorporados ao BMO.
+2. Dados profissionais, de empregadores, clientes ou terceiros não devem ser incorporados ao d-BMO.
 3. Nenhum dado confidencial pode ser enviado a modelo ou serviço externo.
 4. Dados usados em serviços externos devem ser públicos, sintéticos ou expressamente autorizados pelo titular e pelo responsável competente.
 5. Segredos permanecem fora do Git e dos logs.

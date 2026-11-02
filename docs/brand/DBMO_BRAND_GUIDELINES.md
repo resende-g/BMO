@@ -1,12 +1,12 @@
 # d-BMO — Diretrizes de identidade visual
 
 **Versão:** 1.0 (documentação inicial)  
-**Projeto:** Beemon (BMO)  
+**Projeto:** d-BMO  
 **Status:** direção visual de referência; ativos finais pendentes
 
 ## 1. Propósito
 
-O d-BMO (Dark BMO) é a identidade visual, o personagem e a camada de apresentação do Beemon. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
+O d-BMO (Dark BMO) é o nome do projeto e também sua identidade visual e seu personagem. A camada de apresentação é a d-BMO Interface. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
 
 Assinatura verbal:
 

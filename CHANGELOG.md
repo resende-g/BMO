@@ -2,6 +2,21 @@
 
 Mudanças relevantes do projeto e da documentação. Este arquivo não substitui o histórico Git.
 
+## [2026-11-02] — Nome do projeto e consistência documental
+
+### Alterado
+- Nome do projeto unificado como **d-BMO** (Dark BMO), substituindo "Beemon (BMO)". A camada de interface passa a ser **d-BMO Interface**; módulos internos mantêm o prefixo BMO (Brain, Heart, Knowledge, Model Lab).
+- Estado do BMO Model Lab alinhado entre `README.md`, `ARCHITECTURE.md` e `STATUS.md`.
+- `STATUS.md` deixa de apontar para branch de trabalho já mergeada.
+
+### Adicionado
+- `.gitignore` cobrindo segredos, dados pessoais e de treino, modelos, adapters, índices, embeddings, backups e logs, conforme `SECURITY.md`.
+
+## [2026-11-02] — Identidade visual do d-BMO
+
+### Adicionado
+- Documentação de marca em `docs/brand/`: diretrizes, design tokens, especificação do personagem e diretrizes de interface (PR #1).
+
 ## [2026-11-02] — Registro do smoke test QLoRA e avaliação A/B
 
 ### Adicionado

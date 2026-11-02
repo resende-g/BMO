@@ -1,6 +1,6 @@
 # Identidade visual do d-BMO
 
-Esta pasta reúne a documentação normativa da identidade visual do d-BMO (Dark BMO), camada de apresentação e personagem do projeto Beemon (BMO).
+Esta pasta reúne a documentação normativa da identidade visual e do personagem do projeto d-BMO (Dark BMO), aplicada à camada de apresentação (d-BMO Interface).
 
 ## Documentos
 
@@ -17,7 +17,7 @@ Quando os ativos originais forem incorporados ao repositório, devem ser armazen
 
 ## Relação com a arquitetura
 
-O d-BMO é a identidade visual e a camada de interação. Não é o núcleo de inteligência. Consulte [ARCHITECTURE.md](../../ARCHITECTURE.md) para as responsabilidades de BMO Brain, Heart, Knowledge e Model Lab.
+A identidade d-BMO se aplica à camada de interação (d-BMO Interface). Não é o núcleo de inteligência. Consulte [ARCHITECTURE.md](../../ARCHITECTURE.md) para as responsabilidades de BMO Brain, Heart, Knowledge e Model Lab.
 
 ## Estado atual
 
