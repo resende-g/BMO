@@ -61,6 +61,7 @@ Os critérios e resultados históricos estão descritos em [STATUS.md](STATUS.md
 - [SKILLS.md](SKILLS.md): contrato e catálogo inicial de habilidades.
 - [STATUS.md](STATUS.md): evidências históricas, limitações e pendências do protótipo.
 - [CHANGELOG.md](CHANGELOG.md): mudanças relevantes na documentação e no projeto.
+- [docs/brand/README.md](docs/brand/README.md): documentação da identidade visual do d-BMO, tokens, personagem e interface.
 
 ## Ambiente conhecido
 
