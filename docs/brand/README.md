@@ -22,6 +22,7 @@ A identidade d-BMO se aplica à camada de interação (d-BMO Interface). Não é
 ## Estado atual
 
 - Direção estética: definida como referência.
+- Personagem: variação 1 escolhida em 2026-11-02; referência conceitual em `assets/dbmo-referencia-conceitual-v1.jpeg`.
 - Manual documental: em consolidação.
 - Vetores oficiais: pendentes.
 - Fontes tipográficas definitivas: pendentes de seleção e validação de licença.

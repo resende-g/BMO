@@ -41,7 +41,7 @@ A expressão deve apoiar o estado da interação, sem sugerir emoções humanas 
 
 ### 4.1 Personagem
 
-Computador antropomórfico pequeno, retangular e vertical, com cantos arredondados, tela frontal integrada na parte superior, controles físicos abaixo ou ao redor da tela, braços laterais simples e pernas curtas. A especificação detalhada está em [CHARACTER_SPECIFICATION.md](CHARACTER_SPECIFICATION.md).
+Videogame portátil retrô de emulação, vertical e com cantos arredondados. Tem tela 4:3 na metade superior, onde aparece o rosto em pixels vermelhos, cruz direcional, quatro botões de ação, dois analógicos e gatilhos de ombro. Não tem membros e fica apoiado num suporte inclinado. A especificação detalhada está em [CHARACTER_SPECIFICATION.md](CHARACTER_SPECIFICATION.md).
 
 ### 4.2 Símbolo
 

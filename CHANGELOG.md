@@ -12,6 +12,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 ### Adicionado
 - `.gitignore` cobrindo segredos, dados pessoais e de treino, modelos, adapters, índices, embeddings, backups e logs, conforme `SECURITY.md`.
 - `LICENSE` Apache-2.0 para código e documentação. Nome, logotipo e personagem ficam fora da licença (§6).
+- Personagem redesenhado como videogame portátil de emulação, sem membros, com dois analógicos (`CHARACTER_SPECIFICATION.md` v2.0) e referência conceitual em `docs/brand/assets/`.
 
 ## [2026-11-02] — Identidade visual do d-BMO
 
