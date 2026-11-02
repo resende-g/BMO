@@ -1,66 +1,89 @@
-# BMO
+# Beemon (BMO)
 
-Projeto pessoal experimental de um assistente local para consultar documentos com modelos executados pelo [Ollama](https://ollama.com). Começou no Ubuntu e prioriza execução local, referências verificáveis e separação entre coleções de documentos.
+**BMO (BE MORE)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
 
-> **Estado:** o MVP ainda não está concluído. Este repositório contém, por enquanto, a documentação inicial do projeto; os scripts do protótipo estão em outra pasta local e ainda não foram incorporados aqui. Clonar este repositório, por enquanto, não instala nem executa o BMO.
+O nome **Beemon** pode ser utilizado como denominação do projeto; **BMO** permanece a sigla e identidade principal. **d-BMO** designa a futura interface e identidade visual. **BMO Heart** é o módulo de memória pessoal.
 
-Origem dos registros, limites de cada resultado e roadmap: [STATUS.md](STATUS.md).
+> **Estado atual do repositório:** documentação inicial. Não há código de aplicação versionado nesta branch. Os scripts do protótipo mencionados em `STATUS.md` permanecem externos ao repositório. Portanto, clonar este projeto ainda não instala nem executa um assistente BMO.
 
-## Objetivo do MVP
+## Princípios
 
-Entregar uma ferramenta de linha de comando, local no Ubuntu e baseada no Ollama, que responda perguntas sobre o Manifesto do Partido Comunista usando trechos recuperados localmente e mostre esses trechos com suas fontes. Uma coleção pessoal poderá ser consultada somente quando selecionada explicitamente e deverá manter arquivos e índice separados da coleção pública e fora do Git.
+- **Local-first:** inferência e processamento de dados pessoais devem ocorrer localmente.
+- **Privacidade por padrão:** nenhum dado pessoal ou confidencial é enviado a serviços externos automaticamente.
+- **Modularidade:** componentes independentes, com contratos explícitos e substituíveis.
+- **Portabilidade:** o BMO não depende estruturalmente de um modelo, runtime ou framework de agentes.
+- **Segurança:** menor privilégio, isolamento de execução, autorização humana e auditoria.
+- **Transparência:** origem, estado e alterações relevantes devem ser rastreáveis.
+- **Evolução incremental:** implementar o menor componente que resolva uma necessidade demonstrada.
+- **Reprodutibilidade:** registrar versões, configurações, datasets e resultados.
+- **Controle humano:** ações sensíveis não são executadas sem autorização explícita.
 
-O MVP será considerado pronto quando:
+## Arquitetura em desenvolvimento
 
-- a execução puder ser reproduzida a partir do código versionado e do Ollama local;
-- a coleção padrão contiver apenas o documento público definido para a avaliação;
-- cada consulta mostrar os trechos recuperados, o arquivo e o número do trecho;
-- o BMO declarar quando não houver evidência suficiente, sem completar lacunas com fatos inventados;
-- a avaliação reproduzível de 12 perguntas (8 respondíveis e 4 sem resposta no documento) atingir os critérios propostos abaixo;
-- um canário sintético da coleção pessoal não aparecer na busca padrão e a busca pessoal permanecer opt-in;
-- perguntas e respostas não forem gravadas em logs persistentes.
+A arquitetura proposta separa responsabilidades:
 
-### Critérios propostos para a avaliação
+| Componente | Responsabilidade | Estado |
+|---|---|---|
+| d-BMO | Interface, identidade visual e dashboard | Planejado |
+| BMO Brain | Orquestração, sessões, contexto e fluxo de ferramentas | Planejado |
+| BMO Heart | Memória pessoal persistente, revisável e auditável | Planejado |
+| BMO Knowledge | Ingestão, indexação e recuperação documental (RAG) | Planejado |
+| BMO Model Lab | Avaliação e experimentação de modelos | Planejado |
+| Adaptador Hermes | Integração opcional com infraestrutura de agente | Em avaliação |
+| Ollama | Primeiro runtime candidato para inferência local | Testado historicamente; integração no repositório não implementada |
+| Docker | Isolamento de ferramentas e tarefas | Planejado |
+| NetBird | Conectividade privada para acesso remoto | Configurado historicamente; estado atual não revalidado |
 
-São metas propostas; nenhuma foi medida até agora.
+A arquitetura detalhada, os limites de confiança e as relações entre módulos estão em [ARCHITECTURE.md](ARCHITECTURE.md).
 
-- **Recuperação:** `Hit@4` igual a 8/8. O `Hit@4` é o número de perguntas respondíveis com pelo menos um trecho esperado entre os quatro primeiros resultados, dividido por 8.
-- **Perguntas respondíveis:** revisão humana confirmando que as 8 respostas são apoiadas pelos trechos exibidos.
-- **Perguntas sem resposta no documento:** 0/4 respostas que afirmem fatos como se estivessem no documento.
+## MVP documental atual
 
-O `Hit@4` mede apenas a recuperação e não substitui a revisão das respostas.
+O escopo original do protótipo é uma ferramenta local de consulta ao *Manifesto do Partido Comunista*, usando Ollama e recuperação de trechos, com exibição de fontes. A coleção pessoal deve ser separada e habilitada apenas por seleção explícita.
 
-## Fora do MVP
+O MVP não deve ser considerado concluído até que:
+1. o código esteja versionado e a execução seja reproduzível;
+2. a coleção padrão contenha somente o documento público definido para avaliação;
+3. as respostas exibam trechos e referências verificáveis;
+4. o sistema se abstenha quando não houver evidência suficiente;
+5. a avaliação documentada seja executada e revisada;
+6. a separação entre coleções seja validada com embeddings reais;
+7. perguntas e respostas não sejam persistidas em logs sem decisão explícita e controles próprios.
 
-Interface web ou móvel, serviço público na internet e uso do adapter LoRA ficam fora do primeiro MVP.
+Os critérios e resultados históricos estão descritos em [STATUS.md](STATUS.md). As etapas futuras estão em [ROADMAP.md](ROADMAP.md).
 
-## Estado atual
+## Documentação
 
-Resumo. Os registros de ambiente, backup e testes vêm de saídas compartilhadas em conversas do projeto e não foram reexecutados ao escrever esta documentação; números e limites estão em [STATUS.md](STATUS.md).
+- [ARCHITECTURE.md](ARCHITECTURE.md): arquitetura lógica, módulos, interfaces e fluxos.
+- [ROADMAP.md](ROADMAP.md): etapas, prioridades e critérios de conclusão.
+- [SECURITY.md](SECURITY.md): privacidade, segurança, permissões e governança.
+- [MODEL_EVALUATION.md](MODEL_EVALUATION.md): protocolo de avaliação de modelos.
+- [RAG.md](RAG.md): pipeline documental e recuperação.
+- [SKILLS.md](SKILLS.md): contrato e catálogo inicial de habilidades.
+- [STATUS.md](STATUS.md): evidências históricas, limitações e pendências do protótipo.
+- [CHANGELOG.md](CHANGELOG.md): mudanças relevantes na documentação e no projeto.
 
-- Houve testes isolados de inferência com `qwen2.5:3b` e `qwen3:1.7b`, com uma pergunta por execução. Não são um benchmark comparável nem medem a qualidade geral das respostas.
-- Uma consulta local ao Manifesto foi executada e revisada: a revisão encontrou erro factual e afirmações sem apoio suficiente. O critério do MVP ainda não foi atendido.
-- O conjunto de 12 perguntas foi preparado, mas ainda não está neste repositório nem foi executado como avaliação completa.
-- Uma versão anterior da busca padrão misturou conteúdo pessoal com a consulta ao Manifesto. O script local foi alterado para separar as coleções, mas a correção ainda precisa ser revalidada, com embeddings reais e na versão implantada, antes de usar qualquer conteúdo pessoal.
-- Um treino LoRA de fumaça foi concluído para verificar o pipeline. O adapter não foi avaliado como melhoria de qualidade e não faz parte do MVP.
-- O acesso remoto ao Ubuntu local deve ser revalidado, e a restauração do backup em disco externo ainda não foi comprovada.
+## Ambiente conhecido
 
-## Como executar
+As informações abaixo são a configuração de referência informada pelo mantenedor, não requisitos universais nem uma inspeção executada nesta revisão:
 
-Ainda não há instruções de instalação ou execução, porque o código do BMO não está neste repositório. Elas serão adicionadas quando o código for incorporado e a execução puder ser reproduzida.
+- Ubuntu 26.04.1; kernel 7.0.0-38.
+- AMD Ryzen 3 3300X (4 núcleos / 8 threads).
+- NVIDIA GTX 1050 Ti (4 GB VRAM).
+- 24 GB RAM.
+- Ollama como runtime local inicial.
 
-## Privacidade e publicação
+A seleção de modelos deve considerar VRAM, RAM, contexto, latência e qualidade de uso de ferramentas. Não há modelo final selecionado.
 
-- Não versionar documentos pessoais, índices, embeddings, modelos, adapters, logs de execução, chaves, endereços privados nem caminhos absolutos do computador.
-- Usar apenas dados públicos e fixtures sintéticas no repositório. O contexto pessoal, se habilitado localmente, deve permanecer fora do Git.
-- Revisar os logs locais antes de publicar: um script antigo de inferência gravava a resposta do modelo no arquivo JSON de log, e não há confirmação sobre o conteúdo dos demais logs existentes.
-- O validador de isolamento registrado usou um canário sintético e embeddings simulados. Isso verifica separação básica, mas não mede qualidade semântica nem substitui a conferência da versão implantada no Ubuntu.
-- O `.gitignore` reduz o risco de commits acidentais, mas não remove arquivos já rastreados nem apaga o histórico. Conferir `git status` e `git diff --staged` antes de cada commit.
+## Início
 
-## Modelos
+Ainda não existem instruções de instalação ou execução válidas. Não execute comandos presumidos de instalação. A documentação de instalação será adicionada quando o código, as dependências e os testes estiverem versionados e forem reproduzíveis.
 
-`qwen2.5:3b` e `qwen3:1.7b` aparecem em testes de inferência; a escolha final depende de avaliação controlada. `qwen3:1.7b` com quantização `Q4_K_M` e `llama3.2:1b-instruct-q4_K_M` foram sugeridos como candidatos para comparação via Ollama. Não há evidência de que ambos tenham sido avaliados com o mesmo conjunto de prompts e métricas.
+## Segurança e dados
+
+O repositório público deve conter somente código, documentação e dados públicos ou sintéticos autorizados. Memórias pessoais, documentos privados, dados profissionais, históricos de conversa, índices, embeddings privados, modelos locais, adapters, logs e backups devem permanecer fora do Git.
+
+Consulte [SECURITY.md](SECURITY.md) antes de adicionar dados, integrações ou ferramentas.
 
 ## Licença
 
-Ainda não definida: a escolha é uma decisão pendente do mantenedor. Enquanto não houver um arquivo de licença, o projeto não declara licença de uso, cópia ou distribuição.
+A licença do projeto ainda não foi definida. Não presuma autorização de uso, cópia ou redistribuição até que uma licença seja escolhida e publicada. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.

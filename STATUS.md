@@ -1,66 +1,69 @@
-# Estado e roadmap do BMO
+# STATUS — Estado verificável do BMO
 
-- **Atualizado em:** 22/10/2026
-- **Estado geral:** documentação inicial; o MVP ainda não é reproduzível a partir deste repositório.
+- **Data desta revisão documental:** 2026-11-02
+- **Repositório inspecionado:** `resende-g/BMO`
+- **Branch remota consultada:** `main`
+- **Estado geral:** documentação arquitetural publicada; não há código de aplicação versionado na árvore remota inspecionada.
+- **Limite da inspeção:** a revisão consultou a árvore e os arquivos da branch remota. O clone local, seu `git status`, arquivos não rastreados e alterações ainda não publicadas não foram inspecionados.
 
-## Base desta documentação
+## 1. Estado do repositório remoto
 
-Os registros abaixo vêm de três origens, mantidas separadas de propósito:
+A árvore Git consultada antes desta publicação continha somente `README.md` e `STATUS.md`. Este commit acrescenta a documentação arquitetural listada no README. Não foram encontrados código-fonte, scripts, manifests de dependências, testes, configuração de containers ou workflows de CI na árvore remota consultada.
 
-- **Registro de conversa:** informação fornecida pelo mantenedor a partir de saídas compartilhadas em conversas do projeto. Não foi reexecutada nem reconferida ao escrever este documento e não prova que o ambiente continua igual. É a origem de todos os itens de "Concluído/configurado" e "Testado".
-- **Inspeção do repositório:** a página pública do remoto (`github.com/resende-g/BMO`) foi consultada em 22/10/2026, sem autenticação, e informava que o repositório estava vazio. O clone local (branch, `git status`, arquivos rastreados) não foi inspecionado ao redigir este documento: conferir esses pontos antes de depender destas afirmações.
-- **Testes desta sessão:** nenhum teste da aplicação foi executado. Foram feitas apenas verificações textuais da documentação (caminhos absolutos, IPs privados, nomes de usuário, chaves e tokens) e do `.gitignore`.
+O README original informa que os scripts do protótipo permanecem em uma pasta local e ainda não foram incorporados. A documentação arquitetural desta revisão foi publicada na branch `main`; as implementações descritas continuam sendo propostas e não funcionalidades disponíveis.
 
-Os scripts de consulta, inferência, avaliação e validação do protótipo estão fora deste repositório e não foram copiados nem executados durante esta revisão.
+## 2. Estados por componente
 
-## Concluído/configurado
-
-Origem de todos os itens: registro de conversa.
-
-- **Acesso remoto:** o Ubuntu local ficou acessível por SSH. O NetBird foi configurado para o acesso entre os dispositivos registrados e a conexão foi relatada como ativa; um diagnóstico anterior, porém, mostrou o peer de um dos dispositivos sem handshake naquele instante. **A conectividade atual deve ser revalidada de ponta a ponta antes de depender dela.**
-- **Armazenamento e cópia:** um disco externo registrou 932 GB totais, 324 GB usados e 608 GB livres. Foi criada a estrutura `BMO-Backup/`, com `bmo-files/`, `logs/`, `ollama-models/` e `system-info/`. Há registro de cópia do diretório BMO e dos dados de modelos do Ollama; a restauração não foi demonstrada.
-- **Inferência local:** o Ollama foi usado com `qwen2.5:3b` e `qwen3:1.7b` (medições em "Testado").
-- **Protótipo local:** existem fora deste repositório uma busca local sobre o Manifesto, scripts de inferência, um conjunto de avaliação com 12 perguntas (8 respondíveis e 4 sem resposta no documento) e um validador de isolamento. O script de busca foi alterado para separar a coleção do Manifesto da coleção pessoal; essa correção ainda não foi comprovada na versão implantada no Ubuntu.
-
-## Testado
-
-Origem de todos os resultados: registro de conversa. Nenhum deles foi reexecutado nesta sessão.
-
-| Área | Resultado registrado | Limite do resultado |
+| Componente/capacidade | Estado | Evidência e limite |
 |---|---|---|
-| Inferência `qwen2.5:3b` | Uma resposta em **3,384 s**. | Uma pergunta por execução; não mede qualidade nem constitui benchmark comparável. O script antigo gravava a resposta do modelo no log JSON. |
-| Inferência `qwen3:1.7b` | Uma resposta em **2,347 s**. | Uma pergunta por execução; não é comparável ao teste anterior sem prompts e condições idênticos. |
-| Consulta ao Manifesto | Uma consulta local foi executada pelo protótipo de busca. | A revisão encontrou erro factual e afirmações sem apoio suficiente. O critério do MVP não foi atendido. |
-| Isolamento de coleções | O validador reportou separação entre a coleção do Manifesto e um canário sintético, índices distintos e permissões locais `700/600`. | Os embeddings foram simulados: não mede qualidade semântica nem verifica a versão implantada no Ubuntu. |
-| Treino LoRA de fumaça | Execução concluída em 2 passos, com loss registrada de 4,6103 e pico de VRAM de 2,13 GiB. | Teste técnico do pipeline, sem avaliação de qualidade. O adapter não foi avaliado como melhoria e está fora do MVP. |
+| Documentação inicial | Implementado | README e STATUS já estavam na branch remota |
+| d-BMO | Planejado | Nenhuma implementação encontrada na árvore |
+| BMO Brain | Planejado | Nenhuma implementação encontrada na árvore |
+| BMO Heart | Planejado | Nenhuma implementação encontrada na árvore; dados pessoais não devem ser publicados |
+| BMO Knowledge | Planejado / protótipo externo relatado | Scripts externos mencionados em documentação anterior, não versionados |
+| BMO Model Lab | Planejado | Há relato histórico de teste LoRA, sem harness versionado |
+| Hermes Agent | Em avaliação | Nenhuma integração versionada |
+| Ollama | Testado historicamente | Uso relatado em conversas; runtime e versão atuais não foram revalidados nesta revisão |
+| Docker | Planejado | Nenhuma configuração encontrada |
+| NetBird | Configurado historicamente | Conectividade atual não revalidada |
+| Skills | Planejado | Nenhum manifesto ou executor versionado |
+| Licença | Pendente | Nenhum arquivo de licença encontrado |
 
-### Problema de escopo encontrado na busca
+## 3. Registros históricos não reexecutados
 
-Uma versão anterior da busca padrão misturou conteúdo pessoal com a consulta ao Manifesto. O script local foi alterado para separar as coleções e houve uma validação com canário sintético. Como a validação usou embeddings simulados e a versão corrigida ainda não está neste repositório, a correção precisa ser revalidada antes de incluir qualquer conteúdo pessoal.
+Os resultados a seguir foram registrados em documentação anterior com origem em saídas compartilhadas pelo mantenedor. Não foram reexecutados nesta revisão e não devem ser tratados como benchmark atual.
 
-## Planejado
+| Área | Resultado histórico | Limitação |
+|---|---|---|
+| `qwen2.5:3b` | Uma resposta em 3,384 s | Uma pergunta isolada; não mede qualidade nem é benchmark comparável |
+| `qwen3:1.7b` | Uma resposta em 2,347 s | Uma pergunta isolada sob condições não demonstradas como idênticas |
+| Consulta ao Manifesto | Uma consulta local revisada | Revisão encontrou erro factual e afirmações sem suporte suficiente |
+| Isolamento de coleções | Validador relatou separação e canário sintético | Embeddings simulados; não valida a versão implantada com embeddings reais |
+| LoRA de fumaça | 2 passos, loss registrada 4,6103 e pico de VRAM 2,13 GiB | Demonstra execução de pipeline, não melhoria de qualidade |
 
-1. **Fixar o escopo:** manter o Manifesto como única coleção padrão. A coleção pessoal permanece opcional, separada e local; nenhum documento pessoal entra no Git.
-2. **Comparar modelos:** testar, sob as mesmas perguntas e configurações, `qwen3:1.7b` Q4_K_M e `llama3.2:1b-instruct-q4_K_M`. Confirmar as tags e quantizações exatas antes de registrar uma escolha.
-3. **Medir a recuperação:** executar os 12 casos preparados (8 respondíveis e 4 sem resposta) com embeddings reais do Ollama e registrar o `Hit@4`: perguntas respondíveis com pelo menos um trecho esperado entre os quatro primeiros ÷ 8. A meta proposta para o conjunto é 8/8; ela não substitui a revisão das respostas.
-4. **Revisar as respostas:** exigir suporte textual para as afirmações e abstinência nas 4 perguntas sem resposta. Critério proposto: 8/8 respostas respondíveis apoiadas pelos trechos exibidos e 0/4 respostas sem evidência que afirmem fatos como se estivessem no documento.
-5. **Revalidar a privacidade:** executar o validador com embeddings reais e canário sintético; confirmar que a coleção pessoal só é lida quando selecionada explicitamente, que os índices permanecem separados e que logs persistentes não guardam perguntas nem respostas.
-6. **Fechar a operação:** versionar neste repositório o código e as fixtures públicas ou sintéticas, documentar a instalação e a execução, revisar logs e arquivos locais para excluir dados privados e testar a restauração do backup.
+## 4. Riscos e pendências prioritárias
 
-As metas e os critérios acima são propostas; nenhum foi medido.
+1. **Isolamento documental:** houve relato de mistura anterior entre coleção pessoal e consulta pública. A correção relatada precisa ser revalidada com embeddings reais e na versão efetivamente implantada antes de inserir qualquer conteúdo pessoal.
+2. **Logs:** um script antigo teria gravado respostas em log JSON. O conteúdo dos demais logs não foi verificado; revisar localmente antes de publicar ou compartilhar.
+3. **Reprodutibilidade:** código, dependências, fixtures públicas/sintéticas e conjunto de 12 perguntas ainda não estão no repositório.
+4. **Avaliação:** o conjunto de 12 perguntas (8 respondíveis e 4 sem resposta) e os critérios de Hit@4/abstenção ainda não foram executados integralmente conforme protocolo reproduzível.
+5. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
+6. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada de ponta a ponta.
+7. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
+8. **Licença:** decisão pendente. Não presumir licença do projeto ou compatibilidade de dependências.
 
-## Pendente
+## 5. Próximas ações
 
-- Conferir o clone local (branch, `git status`, arquivos rastreados e remoto) e ajustar esta documentação se houver código ou trabalho local não registrado aqui.
-- Incorporar ao repositório o código do protótipo e o conjunto de avaliação de 12 perguntas, sem documentos pessoais, índices, logs nem modelos.
-- Executar a avaliação completa e reproduzível (recuperação e revisão das respostas); ela ainda não passou.
-- Confirmar a correção de isolamento na versão que será publicada e na versão implantada no Ubuntu.
-- Revisar os logs locais antes de publicá-los ou de copiar qualquer arquivo deles para o repositório.
-- Revalidar o acesso SSH via NetBird e testar a restauração do backup.
-- Escolher o modelo final e a quantização e escrever instruções reproduzíveis de instalação e execução.
-- Decidir a licença do projeto: ainda não foi escolhida, e nenhuma foi adotada automaticamente.
-- Se o texto do Manifesto for versionado, registrar a edição ou tradução usada e confirmar que ela pode ser redistribuída.
+A ordem e os critérios detalhados estão em [ROADMAP.md](ROADMAP.md). Prioridades imediatas:
 
-## Critério de saída do MVP
+- conferir o clone local e alterações não publicadas;
+- revisar logs e artefatos locais sem copiar dados privados para o Git;
+- revalidar isolamento de coleções com dados sintéticos e embeddings reais;
+- versionar apenas código e fixtures autorizados;
+- executar avaliação controlada e documentar resultados;
+- testar restauração de backup;
+- selecionar licença e revisar dependências antes de publicação.
 
-Marcar o MVP como concluído somente quando o código estiver neste repositório, a execução local puder ser repetida, os critérios propostos de recuperação e resposta forem atingidos, a coleção pessoal passar pelo teste de isolamento e os arquivos locais com dados privados estiverem excluídos do conjunto de publicação.
+## 6. Proveniência desta revisão
+
+A árvore remota foi consultada em 2026-11-02 e atualizada por um commit documental nesta data. Nenhum teste de aplicação, inferência, RAG, rede, backup ou sandbox foi executado nesta revisão. Nenhum dado local foi inspecionado. A ausência de arquivos na árvore remota não permite concluir que não existam protótipos no computador do mantenedor.
