@@ -1,17 +1,17 @@
-# Beemon (BMO)
+# Dark BMO (d-BMO)
 
-**BMO (BE MORE)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
+**d-BMO (BE MORE DARK)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
 
-O nome **Beemon** pode ser utilizado como denominação do projeto; **BMO** permanece a sigla e identidade principal. **d-BMO** designa a futura interface e identidade visual. **BMO Heart** é o módulo de memória pessoal.
+O nome **Dark BMO** pode ser utilizado como denominação do projeto; **d-BMO** permanece a sigla e identidade principal. **d-BMO** designa a futura interface e identidade visual. **BMO Heart** é o módulo de memória pessoal.
 
-> **Estado atual do repositório:** documentação inicial. Não há código de aplicação versionado nesta branch. Os scripts do protótipo mencionados em `STATUS.md` permanecem externos ao repositório. Portanto, clonar este projeto ainda não instala nem executa um assistente BMO.
+> **Estado atual do repositório:** documentação inicial. Não há código de aplicação versionado nesta branch. Os scripts do protótipo mencionados em `STATUS.md` permanecem externos ao repositório. Portanto, clonar este projeto ainda não instala nem executa um assistente d-BMO.
 
 ## Princípios
 
 - **Local-first:** inferência e processamento de dados pessoais devem ocorrer localmente.
 - **Privacidade por padrão:** nenhum dado pessoal ou confidencial é enviado a serviços externos automaticamente.
 - **Modularidade:** componentes independentes, com contratos explícitos e substituíveis.
-- **Portabilidade:** o BMO não depende estruturalmente de um modelo, runtime ou framework de agentes.
+- **Portabilidade:** o d-BMO não depende estruturalmente de um modelo, runtime ou framework de agentes.
 - **Segurança:** menor privilégio, isolamento de execução, autorização humana e auditoria.
 - **Transparência:** origem, estado e alterações relevantes devem ser rastreáveis.
 - **Evolução incremental:** implementar o menor componente que resolva uma necessidade demonstrada.
