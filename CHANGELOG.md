@@ -2,6 +2,21 @@
 
 Mudanças relevantes do projeto e da documentação. Este arquivo não substitui o histórico Git.
 
+## [2026-11-02] — Registro do smoke test QLoRA e avaliação A/B
+
+### Adicionado
+- Registro do experimento QLoRA Qwen3-1.7B com revisão, hashes, dataset, adapter, configuração e métricas reportadas.
+- Registro das oito perguntas A/B, observações qualitativas e limitações.
+- Documentação explícita da diferença de tokenizer/chat template entre A_base e B_adapter.
+- Requisito de tokenizer e chat template idênticos em comparações base-versus-adapter.
+- Ressalva de que Qwen3-1.7B é modelo experimental, não seleção definitiva do BMO.
+
+### Não realizado
+- Nenhum código de treinamento ou avaliação incorporado ao repositório.
+- Nenhum dataset, adapter, JSON de respostas, log ou dado pessoal publicado.
+- Nenhum novo teste executado durante esta atualização documental.
+- Nenhuma alteração no ambiente local do mantenedor.
+
 ## [2026-11-02] — Documentação arquitetural publicada
 
 ### Adicionado
@@ -17,4 +32,3 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - Nenhum código de produção implementado.
 - Nenhuma dependência instalada.
 - Nenhuma configuração do sistema operacional alterada.
-- Publicação realizada em um único commit na branch `main`, sem alterações no código de aplicação ou na infraestrutura.
