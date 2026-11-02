@@ -87,4 +87,6 @@ Consulte [SECURITY.md](SECURITY.md) antes de adicionar dados, integrações ou f
 
 ## Licença
 
-A licença do projeto ainda não foi definida. Não presuma autorização de uso, cópia ou redistribuição até que uma licença seja escolhida e publicada. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.
+O código e a documentação deste repositório são distribuídos sob a [Apache License 2.0](LICENSE).
+
+A licença não concede direitos sobre o nome **d-BMO**, a forma por extenso **BE MORE DARK**, o logotipo ou o personagem (Apache-2.0, §6). A identidade visual descrita em `docs/brand/` não está licenciada para uso como marca por terceiros. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.

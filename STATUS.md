@@ -28,7 +28,7 @@ As funcionalidades descritas nos documentos arquiteturais são propostas ou prot
 | Docker | Planejado | Nenhuma configuração encontrada |
 | NetBird | Configurado historicamente | Conectividade atual não revalidada |
 | Skills | Planejado | Nenhum executor versionado |
-| Licença | Pendente | Decisão ainda não registrada |
+| Licença | Definida | Apache-2.0 para código e documentação; nome, logotipo e personagem excluídos (§6) |
 
 ## 3. Experimentos de modelos
 
@@ -72,7 +72,7 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 7. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
 8. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada.
 9. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
-10. **Licença:** decisão pendente; não presumir licença do projeto ou compatibilidade de dependências.
+10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. O personagem deriva visualmente de BMO (*Hora de Aventura*, Cartoon Network); avaliar redesenho original antes de publicar ativos visuais.
 
 ## 5. Próximas ações
 
@@ -84,7 +84,8 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 - [ ] Versionar somente código e fixtures autorizados.
 - [ ] Executar avaliação RAG controlada e documentar resultados.
 - [ ] Testar restauração de backup.
-- [ ] Selecionar licença e revisar dependências antes de publicação.
+- [x] Selecionar licença (Apache-2.0).
+- [ ] Revisar licenças das dependências antes de publicação.
 
 ## 6. Proveniência
 

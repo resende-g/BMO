@@ -11,6 +11,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 
 ### Adicionado
 - `.gitignore` cobrindo segredos, dados pessoais e de treino, modelos, adapters, índices, embeddings, backups e logs, conforme `SECURITY.md`.
+- `LICENSE` Apache-2.0 para código e documentação. Nome, logotipo e personagem ficam fora da licença (§6).
 
 ## [2026-11-02] — Identidade visual do d-BMO
 

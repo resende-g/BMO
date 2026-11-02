@@ -217,7 +217,7 @@ Esses dados são uma fotografia de referência fornecida pelo mantenedor e preci
 6. Modelo e quantização padrão para inferência e embeddings.
 7. Executor e perfil de sandbox adequados ao Ubuntu de referência.
 8. Política de logs e retenção.
-9. Licença do repositório e compatibilidade com dependências.
+9. Compatibilidade das dependências com a licença do repositório (Apache-2.0).
 10. Estratégia de backup e restauração testada.
 
 ## 10. Critérios de aceitação arquitetural

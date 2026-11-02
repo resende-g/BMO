@@ -26,7 +26,7 @@ Tarefas:
 - [x] Inspecionar árvore pública e documentação atual do GitHub.
 - [ ] Conferir clone local, branch, `git status`, arquivos rastreados e diferenças não publicadas.
 - [ ] Revisar logs e artefatos locais antes de qualquer publicação.
-- [ ] Definir licença do projeto.
+- [x] Definir licença do projeto (Apache-2.0).
 
 **Conclusão:** inventário datado, riscos identificados, backup restaurável e repositório sem dados privados.
 
