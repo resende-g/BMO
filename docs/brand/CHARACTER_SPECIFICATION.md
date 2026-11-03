@@ -11,6 +11,8 @@ A referência de gênero é a categoria de portáteis verticais de emulação, c
 
 Referência visual: [assets/dbmo-referencia-conceitual-v1.jpeg](assets/dbmo-referencia-conceitual-v1.jpeg) (ver §9).
 
+O aparelho físico que implementa esta especificação é desenvolvido em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO) (hardware, firmware do rosto e carcaça).
+
 ## 2. Silhueta e componentes
 
 Características obrigatórias:

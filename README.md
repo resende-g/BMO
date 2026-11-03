@@ -33,6 +33,7 @@ A arquitetura proposta separa responsabilidades:
 | Ollama | Primeiro runtime candidato para inferência local | Testado historicamente; integração no repositório não implementada |
 | Docker | Isolamento de ferramentas e tarefas | Planejado |
 | NetBird | Conectividade privada para acesso remoto | Configurado historicamente; estado atual não revalidado |
+| dark-BMO | Corpo físico: aparelho portátil próprio (ESP32-S3) com o personagem, tela, áudio e microfone | Hardware em montagem em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO); integração com o Brain planejada |
 
 A arquitetura detalhada, os limites de confiança e as relações entre módulos estão em [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -62,6 +63,7 @@ Os critérios e resultados históricos estão descritos em [STATUS.md](STATUS.md
 - [STATUS.md](STATUS.md): evidências históricas, limitações e pendências do protótipo.
 - [CHANGELOG.md](CHANGELOG.md): mudanças relevantes na documentação e no projeto.
 - [docs/brand/README.md](docs/brand/README.md): documentação da identidade visual do d-BMO, tokens, personagem e interface.
+- [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO): hardware do d-BMO (corpo físico, firmware, BOM, carcaça). Repositório separado.
 
 ## Ambiente conhecido
 

@@ -27,6 +27,7 @@ As funcionalidades descritas nos documentos arquiteturais são propostas ou prot
 | Ollama | Testado historicamente | Runtime e versão atuais não revalidados nesta revisão |
 | Docker | Planejado | Nenhuma configuração encontrada |
 | NetBird | Configurado historicamente | Conectividade atual não revalidada |
+| dark-BMO (corpo físico) | Hardware em montagem; integração planejada | Repositório próprio ([resende-g/dark-BMO](https://github.com/resende-g/dark-BMO)); modo agente não implementado |
 | Skills | Planejado | Nenhum executor versionado |
 | Licença | Definida | Apache-2.0 para código e documentação; nome, logotipo e personagem excluídos (§6) |
 

@@ -10,6 +10,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - `STATUS.md` deixa de apontar para branch de trabalho já mergeada.
 
 ### Adicionado
+- Ligação com o hardware em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO): componente "dark-BMO (corpo físico)" no README e no `STATUS.md`, seção 4.11 da `ARCHITECTURE.md` (cliente da API local, sem acesso ao Heart, ferramentas de RF/NFC/IR fora das skills) e referência na spec do personagem.
 - `.gitignore` cobrindo segredos, dados pessoais e de treino, modelos, adapters, índices, embeddings, backups e logs, conforme `SECURITY.md`.
 - `LICENSE` Apache-2.0 para código e documentação. Nome, logotipo e personagem ficam fora da licença (§6).
 - Personagem redesenhado como videogame portátil de emulação, sem membros, com dois analógicos (`CHARACTER_SPECIFICATION.md` v2.0) e referência conceitual em `docs/brand/assets/`.

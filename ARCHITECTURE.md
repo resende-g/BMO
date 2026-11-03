@@ -38,6 +38,7 @@ flowchart TB
     REMOTE[Dispositivos autorizados] --> NB[NetBird<br/>Rede privada]
     NB --> UI
     NB --> CORE
+    BODY[dark-BMO<br/>Corpo físico] -. cliente da API local, via rede privada .-> NB
 ```
 
 O diagrama representa a arquitetura-alvo, não uma descrição do software atualmente disponível. NetBird deve fornecer conectividade privada; não deve expor serviços internos diretamente à internet pública.
@@ -148,6 +149,19 @@ Não usar `--privileged`, não montar o diretório pessoal completo, não montar
 **Estado:** Configurado historicamente; conectividade atual não revalidada.
 
 Fornece rede privada entre dispositivos autorizados. Acesso remoto deve exigir autenticação e autorização também na aplicação. Não expor Ollama, banco de dados ou executor à internet pública.
+
+### 4.11 Corpo físico: dark-BMO
+
+**Estado:** Hardware em montagem em repositório próprio ([resende-g/dark-BMO](https://github.com/resende-g/dark-BMO)); integração com o Brain planejada.
+
+O dark-BMO é um aparelho portátil (ESP32-S3) que materializa o personagem d-BMO: tela com o rosto, alto-falante, microfone e botões. No "modo agente", previsto no firmware dele, o aparelho funciona como corpo remoto do assistente: envia texto ou áudio ao Brain e mostra a resposta e o estado do rosto.
+
+Regras:
+- é um **cliente** da API local do Brain, com autenticação própria, pela rede privada (NetBird). Não acessa Heart, Knowledge nem executor diretamente;
+- é um dispositivo não confiável: as entradas dele passam pelas mesmas validações das demais interfaces;
+- áudio do microfone é dado pessoal: não persistir por padrão (ver `SECURITY.md` §9);
+- as ferramentas de RF, NFC e IR do dark-BMO (Bruce) **não são skills do BMO**. O Brain não as aciona remotamente. Qualquer integração futura exige manifesto em `SKILLS.md`, Policy Gate, escopo autorizado e confirmação humana no próprio aparelho;
+- o estado do rosto (`IDLE`, `THINKING`, `ALERT` etc.) reflete o estado real do Brain, sem sugerir autonomia que o sistema não tem (ver `docs/brand/`).
 
 ## 5. Contratos e fluxo de uma solicitação
 
