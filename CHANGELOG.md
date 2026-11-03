@@ -9,8 +9,12 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - Estado do BMO Model Lab alinhado entre `README.md`, `ARCHITECTURE.md` e `STATUS.md`.
 - `STATUS.md` deixa de apontar para branch de trabalho já mergeada.
 
+### Alterado (repositórios)
+- Repositórios renomeados no GitHub: `resende-g/BMO` → `resende-g/d-BMO` e `resende-g/dark-BMO` → `resende-g/d-BMO-body`. Links e nomes atualizados.
+- Licença do hardware alinhada: `d-BMO-body` passa a usar Apache-2.0 (com AGPL-3.0 no firmware derivado do Bruce e CERN-OHL-P-2.0 para arquivos de projeto de hardware).
+
 ### Adicionado
-- Ligação com o hardware em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO): componente "dark-BMO (corpo físico)" no README e no `STATUS.md`, seção 4.11 da `ARCHITECTURE.md` (cliente da API local, sem acesso ao Heart, ferramentas de RF/NFC/IR fora das skills) e referência na spec do personagem.
+- Ligação com o hardware em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body): componente "d-BMO-body (corpo físico)" no README e no `STATUS.md`, seção 4.11 da `ARCHITECTURE.md` (cliente da API local, sem acesso ao Heart, ferramentas de RF/NFC/IR fora das skills) e referência na spec do personagem.
 - `.gitignore` cobrindo segredos, dados pessoais e de treino, modelos, adapters, índices, embeddings, backups e logs, conforme `SECURITY.md`.
 - `LICENSE` Apache-2.0 para código e documentação. Nome, logotipo e personagem ficam fora da licença (§6).
 - Personagem redesenhado como videogame portátil de emulação, sem membros, com dois analógicos (`CHARACTER_SPECIFICATION.md` v2.0) e referência conceitual em `docs/brand/assets/`.

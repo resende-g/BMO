@@ -33,7 +33,7 @@ A arquitetura proposta separa responsabilidades:
 | Ollama | Primeiro runtime candidato para inferência local | Testado historicamente; integração no repositório não implementada |
 | Docker | Isolamento de ferramentas e tarefas | Planejado |
 | NetBird | Conectividade privada para acesso remoto | Configurado historicamente; estado atual não revalidado |
-| dark-BMO | Corpo físico: aparelho portátil próprio (ESP32-S3) com o personagem, tela, áudio e microfone | Hardware em montagem em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO); integração com o Brain planejada |
+| d-BMO-body | Corpo físico: aparelho portátil próprio (ESP32-S3) com o personagem, tela, áudio e microfone | Hardware em montagem em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body); integração com o Brain planejada |
 
 A arquitetura detalhada, os limites de confiança e as relações entre módulos estão em [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -63,7 +63,7 @@ Os critérios e resultados históricos estão descritos em [STATUS.md](STATUS.md
 - [STATUS.md](STATUS.md): evidências históricas, limitações e pendências do protótipo.
 - [CHANGELOG.md](CHANGELOG.md): mudanças relevantes na documentação e no projeto.
 - [docs/brand/README.md](docs/brand/README.md): documentação da identidade visual do d-BMO, tokens, personagem e interface.
-- [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO): hardware do d-BMO (corpo físico, firmware, BOM, carcaça). Repositório separado.
+- [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body): hardware do d-BMO (corpo físico, firmware, BOM, carcaça). Repositório separado.
 
 ## Ambiente conhecido
 
@@ -89,6 +89,6 @@ Consulte [SECURITY.md](SECURITY.md) antes de adicionar dados, integrações ou f
 
 ## Licença
 
-O código e a documentação deste repositório são distribuídos sob a [Apache License 2.0](LICENSE).
+Copyright 2026 Gabriel Almeida Resende. O código e a documentação deste repositório são distribuídos sob a [Apache License 2.0](LICENSE). O hardware em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body) segue a mesma licença, com exceções próprias (firmware derivado do Bruce em AGPL-3.0 e arquivos de projeto de hardware em CERN-OHL-P-2.0).
 
-A licença não concede direitos sobre o nome **d-BMO**, a forma por extenso **BE MORE DARK**, o logotipo ou o personagem (Apache-2.0, §6). A identidade visual descrita em `docs/brand/` não está licenciada para uso como marca por terceiros. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.
+A licença não concede direitos sobre o nome **d-BMO**, a forma por extenso **BE MORE DARK**, o logotipo ou o personagem (Apache-2.0, §6). A identidade visual descrita em `docs/brand/` e as imagens de `docs/brand/assets/` (referências geradas por IA) não estão licenciadas: todos os direitos reservados. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.

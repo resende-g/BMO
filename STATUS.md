@@ -1,7 +1,7 @@
 # STATUS — Estado verificável do d-BMO
 
 - **Data desta revisão:** 2026-11-02
-- **Repositório:** `resende-g/BMO`
+- **Repositório:** `resende-g/d-BMO`
 - **Branch:** `main` (atualização via PR #2, `docs/model-lab-qlora-smoke-20261102`, já mergeado)
 - **Estado geral:** documentação arquitetural publicada; código de aplicação e scripts do protótipo continuam fora da árvore Git consultada.
 - **Modelo-base definitivo:** ainda não selecionado.
@@ -27,7 +27,7 @@ As funcionalidades descritas nos documentos arquiteturais são propostas ou prot
 | Ollama | Testado historicamente | Runtime e versão atuais não revalidados nesta revisão |
 | Docker | Planejado | Nenhuma configuração encontrada |
 | NetBird | Configurado historicamente | Conectividade atual não revalidada |
-| dark-BMO (corpo físico) | Hardware em montagem; integração planejada | Repositório próprio ([resende-g/dark-BMO](https://github.com/resende-g/dark-BMO)); modo agente não implementado |
+| d-BMO-body (corpo físico) | Hardware em montagem; integração planejada | Repositório próprio ([resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body)); modo agente não implementado |
 | Skills | Planejado | Nenhum executor versionado |
 | Licença | Definida | Apache-2.0 para código e documentação; nome, logotipo e personagem excluídos (§6) |
 

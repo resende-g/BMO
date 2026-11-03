@@ -11,7 +11,7 @@ A referência de gênero é a categoria de portáteis verticais de emulação, c
 
 Referência visual: [assets/dbmo-referencia-conceitual-v1.jpeg](assets/dbmo-referencia-conceitual-v1.jpeg) (ver §9).
 
-O aparelho físico que implementa esta especificação é desenvolvido em [resende-g/dark-BMO](https://github.com/resende-g/dark-BMO) (hardware, firmware do rosto e carcaça).
+O aparelho físico que implementa esta especificação é desenvolvido em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body) (hardware, firmware do rosto e carcaça).
 
 ## 2. Silhueta e componentes
 
@@ -126,4 +126,4 @@ Na referência v1, o ponto vermelho entre a cruz direcional e os botões de aç�
 | Natureza | referência conceitual; não é arte final, vetor nem desenho cotado |
 | Autoria | gerada por IA a partir de prompt do mantenedor; a arte final deve ser redesenhada ou vetorizada por autor humano |
 
-A licença Apache-2.0 do repositório não cobre esta imagem nem o personagem (ver `README.md`).
+A licença Apache-2.0 do repositório não cobre esta imagem nem o personagem: todos os direitos reservados (ver `README.md`).
