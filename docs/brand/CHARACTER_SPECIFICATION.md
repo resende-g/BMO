@@ -126,4 +126,6 @@ Na referência v1, o ponto vermelho entre a cruz direcional e os botões de aç�
 | Natureza | referência conceitual; não é arte final, vetor nem desenho cotado |
 | Autoria | gerada por IA a partir de prompt do mantenedor; a arte final deve ser redesenhada ou vetorizada por autor humano |
 
+**Render do corpo, v1** (`assets/dbmo-body-render-v1.jpg`): gerado no Gemini em 2026-11-02 a partir da variação 1, recortado na vista frontal. Os símbolos dos botões de ação foram apagados na edição, para cumprir a §2.2. Os olhos ainda aparecem em formato de "+": o desenho de referência do rosto é o do firmware (`d-BMO-body/firmware/rosto/`), em blocos 2 × 3. Mesma natureza e autoria da referência acima.
+
 A licença Apache-2.0 do repositório não cobre esta imagem nem o personagem: todos os direitos reservados (ver `README.md`).

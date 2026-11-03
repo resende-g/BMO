@@ -1,5 +1,11 @@
 # d-BMO
 
+<p align="center">
+  <img src="docs/brand/assets/dbmo-body-render-v1.jpg" alt="Render do d-BMO: videogame portátil vertical prata com tela 4:3 e rosto em pixels vermelhos, D-pad e botões grafite, dois analógicos, cartucho no topo e antena SMA" width="320">
+  <br>
+  <sub>O personagem d-BMO no corpo físico (<a href="https://github.com/resende-g/d-BMO-body">d-BMO-body</a>). Render gerado por IA; não é arte final.</sub>
+</p>
+
 **d-BMO (BE MORE DARK)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
 
 **d-BMO** é o nome padrão do projeto; **BE MORE DARK** é a forma por extenso. A camada de interface e identidade visual é a **d-BMO Interface**. Os módulos internos usam o prefixo BMO: **BMO Brain** (orquestração), **BMO Heart** (memória pessoal), **BMO Knowledge** (RAG) e **BMO Model Lab** (avaliação).
