@@ -1,4 +1,4 @@
-# Sistema de Skills do BMO
+# Sistema de Skills do d-BMO
 
 ## 1. Objetivo
 

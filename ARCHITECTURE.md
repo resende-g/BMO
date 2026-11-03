@@ -1,4 +1,4 @@
-# Arquitetura do Beemon (BMO)
+# Arquitetura do d-BMO
 
 - **Status do documento:** proposta arquitetural.
 - **Estado de implementação:** a arquitetura descrita ainda não está implementada neste repositório, salvo os registros históricos explicitamente identificados em `STATUS.md`.
@@ -6,7 +6,7 @@
 
 ## 1. Objetivos arquiteturais
 
-O BMO deve ser uma infraestrutura pessoal de IA local-first, não apenas uma interface conectada a um LLM. A arquitetura precisa permitir substituir modelos, runtimes e frameworks sem reescrever memória, conhecimento ou políticas de segurança.
+O d-BMO deve ser uma infraestrutura pessoal de IA local-first, não apenas uma interface conectada a um LLM. A arquitetura precisa permitir substituir modelos, runtimes e frameworks sem reescrever memória, conhecimento ou políticas de segurança.
 
 Requisitos prioritários:
 - dados pessoais processados localmente por padrão;
@@ -21,7 +21,7 @@ Requisitos prioritários:
 
 ```mermaid
 flowchart TB
-    U[Usuário] --> UI[d-BMO<br/>Interface e identidade]
+    U[Usuário] --> UI[d-BMO Interface<br/>Interface e identidade]
     UI --> CORE[BMO Brain<br/>Orquestração]
     CORE --> ADAPTER[Adaptador de agente]
     ADAPTER -. integração opcional .-> H[Hermes Agent<br/>Infraestrutura candidata]
@@ -38,6 +38,7 @@ flowchart TB
     REMOTE[Dispositivos autorizados] --> NB[NetBird<br/>Rede privada]
     NB --> UI
     NB --> CORE
+    BODY[d-BMO-body<br/>Corpo físico] -. cliente da API local, via rede privada .-> NB
 ```
 
 O diagrama representa a arquitetura-alvo, não uma descrição do software atualmente disponível. NetBird deve fornecer conectividade privada; não deve expor serviços internos diretamente à internet pública.
@@ -56,7 +57,7 @@ Não promover um item a “Implementado” com base apenas em intenção, teste 
 
 ## 4. Módulos e responsabilidades
 
-### 4.1 d-BMO — interface
+### 4.1 d-BMO Interface
 
 **Estado:** Planejado.
 
@@ -78,7 +79,7 @@ Começar com um único processo e um fluxo de execução previsível. Planejamen
 
 **Estado:** Em avaliação.
 
-Hermes pode fornecer infraestrutura de agente, ferramentas e skills. A integração deve ocorrer por adaptador, atrás de uma interface interna do BMO. O Hermes não é a identidade do BMO nem autoridade sobre memória e política.
+Hermes pode fornecer infraestrutura de agente, ferramentas e skills. A integração deve ocorrer por adaptador, atrás de uma interface interna do d-BMO. O Hermes não é a identidade do d-BMO nem autoridade sobre memória e política.
 
 Regras:
 - fixar e registrar versão/revisão utilizada;
@@ -90,7 +91,7 @@ Regras:
 
 ### 4.4 Adaptador de inferência / Ollama
 
-**Estado:** Runtime testado historicamente; adaptador do BMO não implementado.
+**Estado:** Runtime testado historicamente; adaptador do d-BMO não implementado.
 
 O Brain deve consumir uma interface independente do runtime, com operações mínimas como geração, streaming opcional, metadados do modelo e cancelamento quando suportado. O adaptador traduz essa interface para Ollama.
 
@@ -123,7 +124,7 @@ Começar com busca textual local (SQLite FTS5) se suficiente. Adicionar embeddin
 
 ### 4.7 BMO Model Lab
 
-**Estado:** Planejado; há registro histórico de teste LoRA de fumaça, sem avaliação de melhoria.
+**Estado:** Protocolo documentado; smoke test QLoRA e A/B exploratório registrados em 2026-11-02 (ver `STATUS.md`). Harness e artefatos não versionados; sem avaliação de melhoria.
 
 Responsável por inventário de modelos, datasets permitidos, protocolos de avaliação, métricas, experimentos de adaptação e versionamento de resultados. Não participa do caminho de execução normal do assistente, exceto para disponibilizar modelos explicitamente aprovados.
 
@@ -149,11 +150,24 @@ Não usar `--privileged`, não montar o diretório pessoal completo, não montar
 
 Fornece rede privada entre dispositivos autorizados. Acesso remoto deve exigir autenticação e autorização também na aplicação. Não expor Ollama, banco de dados ou executor à internet pública.
 
+### 4.11 Corpo físico: d-BMO-body
+
+**Estado:** Hardware em montagem em repositório próprio ([resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body)); integração com o Brain planejada.
+
+O d-BMO-body é um aparelho portátil (ESP32-S3) que materializa o personagem d-BMO: tela com o rosto, alto-falante, microfone e botões. No "modo agente", previsto no firmware dele, o aparelho funciona como corpo remoto do assistente: envia texto ou áudio ao Brain e mostra a resposta e o estado do rosto.
+
+Regras:
+- é um **cliente** da API local do Brain, com autenticação própria, pela rede privada (NetBird). Não acessa Heart, Knowledge nem executor diretamente;
+- é um dispositivo não confiável: as entradas dele passam pelas mesmas validações das demais interfaces;
+- áudio do microfone é dado pessoal: não persistir por padrão (ver `SECURITY.md` §9);
+- as ferramentas de RF, NFC e IR do d-BMO-body (Bruce) **não são skills do BMO**. O Brain não as aciona remotamente. Qualquer integração futura exige manifesto em `SKILLS.md`, Policy Gate, escopo autorizado e confirmação humana no próprio aparelho;
+- o estado do rosto (`IDLE`, `THINKING`, `ALERT` etc.) reflete o estado real do Brain, sem sugerir autonomia que o sistema não tem (ver `docs/brand/`).
+
 ## 5. Contratos e fluxo de uma solicitação
 
 Fluxo proposto:
 
-1. d-BMO envia solicitação e identificador de sessão ao Brain.
+1. d-BMO Interface envia solicitação e identificador de sessão ao Brain.
 2. Brain valida identidade, sessão, limites e política aplicável.
 3. Brain obtém contexto necessário do Heart e/ou Knowledge, respeitando escopos e permissões.
 4. Brain solicita inferência pelo adaptador de modelo.
@@ -161,7 +175,7 @@ Fluxo proposto:
 6. Operações sensíveis aguardam autorização explícita do usuário.
 7. Executor realiza a operação isolada e retorna resultado estruturado.
 8. Brain valida e sintetiza a resposta, mantendo referências e proveniência.
-9. d-BMO apresenta resposta, fontes, ações executadas e estado de autorização.
+9. d-BMO Interface apresenta resposta, fontes, ações executadas e estado de autorização.
 
 A política deve ser aplicada fora do prompt do modelo. Instruções em documentos recuperados ou saídas de ferramentas são dados não confiáveis, nunca comandos de política.
 
@@ -209,7 +223,7 @@ Esses dados são uma fotografia de referência fornecida pelo mantenedor e preci
 
 ## 9. Decisões em aberto
 
-1. API local entre d-BMO e Brain.
+1. API local entre d-BMO Interface e Brain.
 2. Persistência inicial do Heart e política de criptografia em repouso.
 3. Contrato de memória e fluxo de aprovação de novas memórias.
 4. Formato e versão do manifesto de skills.
@@ -217,7 +231,7 @@ Esses dados são uma fotografia de referência fornecida pelo mantenedor e preci
 6. Modelo e quantização padrão para inferência e embeddings.
 7. Executor e perfil de sandbox adequados ao Ubuntu de referência.
 8. Política de logs e retenção.
-9. Licença do repositório e compatibilidade com dependências.
+9. Compatibilidade das dependências com a licença do repositório (Apache-2.0).
 10. Estratégia de backup e restauração testada.
 
 ## 10. Critérios de aceitação arquitetural

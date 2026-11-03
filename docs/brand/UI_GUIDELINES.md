@@ -5,7 +5,7 @@
 
 ## 1. Objetivo
 
-Aplicar a identidade d-BMO a interfaces funcionais do Beemon, mantendo legibilidade, previsibilidade e transparência sobre o estado real do sistema.
+Aplicar a identidade d-BMO a interfaces funcionais do projeto, mantendo legibilidade, previsibilidade e transparência sobre o estado real do sistema.
 
 A interface é uma camada de apresentação. Regras de negócio, autorização, memória e execução pertencem aos módulos correspondentes do BMO Brain e serviços especializados.
 

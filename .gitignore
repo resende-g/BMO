@@ -1,0 +1,45 @@
+# Política: SECURITY.md §4. O .gitignore reduz acidentes; não substitui revisão de git status/diff.
+
+# Segredos
+.env
+.env.*
+*.pem
+*.key
+
+# Dados pessoais, de treino e contexto local
+training_docs/
+data/private/
+*.jsonl
+
+# Modelos, adapters, checkpoints
+models/
+adapters/
+checkpoints/
+*.safetensors
+*.gguf
+*.bin
+*.pt
+
+# Índices, embeddings, bancos e backups
+*.db
+*.sqlite
+*.sqlite3
+*.faiss
+embeddings/
+indexes/
+backups/
+*.dump
+
+# Logs e resultados brutos
+logs/
+*.log
+results/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
+.DS_Store

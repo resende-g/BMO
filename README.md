@@ -1,8 +1,14 @@
-# Dark BMO (d-BMO)
+# d-BMO
+
+<p align="center">
+  <img src="docs/brand/assets/dbmo-body-render-v1.jpg" alt="Render do d-BMO: videogame portátil vertical prata com tela 4:3 e rosto em pixels vermelhos, D-pad e botões grafite, dois analógicos, cartucho no topo e antena SMA" width="320">
+  <br>
+  <sub>O personagem d-BMO no corpo físico (<a href="https://github.com/resende-g/d-BMO-body">d-BMO-body</a>). Render gerado por IA; não é arte final.</sub>
+</p>
 
 **d-BMO (BE MORE DARK)** é um projeto pessoal de assistente de inteligência artificial local-first. Seu objetivo é evoluir de um protótipo de consulta documental para uma infraestrutura pessoal modular, auditável e controlada pelo usuário, capaz de integrar modelos locais, memória persistente, conhecimento documental e ferramentas com permissões explícitas.
 
-O nome **Dark BMO** pode ser utilizado como denominação do projeto; **d-BMO** permanece a sigla e identidade principal. **d-BMO** designa a futura interface e identidade visual. **BMO Heart** é o módulo de memória pessoal.
+**d-BMO** é o nome padrão do projeto; **BE MORE DARK** é a forma por extenso. A camada de interface e identidade visual é a **d-BMO Interface**. Os módulos internos usam o prefixo BMO: **BMO Brain** (orquestração), **BMO Heart** (memória pessoal), **BMO Knowledge** (RAG) e **BMO Model Lab** (avaliação).
 
 > **Estado atual do repositório:** documentação inicial. Não há código de aplicação versionado nesta branch. Os scripts do protótipo mencionados em `STATUS.md` permanecem externos ao repositório. Portanto, clonar este projeto ainda não instala nem executa um assistente d-BMO.
 
@@ -24,15 +30,16 @@ A arquitetura proposta separa responsabilidades:
 
 | Componente | Responsabilidade | Estado |
 |---|---|---|
-| d-BMO | Interface, identidade visual e dashboard | Planejado |
+| d-BMO Interface | Interface, identidade visual e dashboard | Planejado |
 | BMO Brain | Orquestração, sessões, contexto e fluxo de ferramentas | Planejado |
 | BMO Heart | Memória pessoal persistente, revisável e auditável | Planejado |
 | BMO Knowledge | Ingestão, indexação e recuperação documental (RAG) | Planejado |
-| BMO Model Lab | Avaliação e experimentação de modelos | Planejado |
+| BMO Model Lab | Avaliação e experimentação de modelos | Protocolo documentado; smoke test QLoRA registrado, harness não versionado |
 | Adaptador Hermes | Integração opcional com infraestrutura de agente | Em avaliação |
 | Ollama | Primeiro runtime candidato para inferência local | Testado historicamente; integração no repositório não implementada |
 | Docker | Isolamento de ferramentas e tarefas | Planejado |
 | NetBird | Conectividade privada para acesso remoto | Configurado historicamente; estado atual não revalidado |
+| d-BMO-body | Corpo físico: aparelho portátil próprio (ESP32-S3) com o personagem, tela, áudio e microfone | Hardware em montagem em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body); integração com o Brain planejada |
 
 A arquitetura detalhada, os limites de confiança e as relações entre módulos estão em [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -62,6 +69,7 @@ Os critérios e resultados históricos estão descritos em [STATUS.md](STATUS.md
 - [STATUS.md](STATUS.md): evidências históricas, limitações e pendências do protótipo.
 - [CHANGELOG.md](CHANGELOG.md): mudanças relevantes na documentação e no projeto.
 - [docs/brand/README.md](docs/brand/README.md): documentação da identidade visual do d-BMO, tokens, personagem e interface.
+- [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body): hardware do d-BMO (corpo físico, firmware, BOM, carcaça). Repositório separado.
 
 ## Ambiente conhecido
 
@@ -87,4 +95,6 @@ Consulte [SECURITY.md](SECURITY.md) antes de adicionar dados, integrações ou f
 
 ## Licença
 
-A licença do projeto ainda não foi definida. Não presuma autorização de uso, cópia ou redistribuição até que uma licença seja escolhida e publicada. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.
+Copyright 2026 Gabriel Almeida Resende. O código e a documentação deste repositório são distribuídos sob a [Apache License 2.0](LICENSE). O hardware em [resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body) segue a mesma licença, com exceções próprias (firmware derivado do Bruce em AGPL-3.0 e arquivos de projeto de hardware em CERN-OHL-P-2.0).
+
+A licença não concede direitos sobre o nome **d-BMO**, a forma por extenso **BE MORE DARK**, o logotipo ou o personagem (Apache-2.0, §6). A identidade visual descrita em `docs/brand/` e as imagens de `docs/brand/assets/` (referências geradas por IA) não estão licenciadas: todos os direitos reservados. A integração de componentes de terceiros exige verificação das licenças e avisos aplicáveis às versões efetivamente utilizadas.

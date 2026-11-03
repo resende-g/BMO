@@ -1,16 +1,16 @@
 # d-BMO — Diretrizes de identidade visual
 
 **Versão:** 1.0 (documentação inicial)  
-**Projeto:** Beemon (BMO)  
+**Projeto:** d-BMO  
 **Status:** direção visual de referência; ativos finais pendentes
 
 ## 1. Propósito
 
-O d-BMO (Dark BMO) é a identidade visual, o personagem e a camada de apresentação do Beemon. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
+O d-BMO (BE MORE DARK) é o nome padrão do projeto e também sua identidade visual e seu personagem. A camada de apresentação é a d-BMO Interface. Sua função é tornar o sistema reconhecível e comunicar uma inteligência pessoal, local e orientada à privacidade.
 
 Assinatura verbal:
 
-> **d-BMO — DARK BMO**  
+> **d-BMO — BE MORE DARK**  
 > LOCAL INTELLIGENCE. PRIVATE BY DESIGN.
 
 O slogan expressa a intenção arquitetural do projeto. Não constitui, por si só, garantia de que toda operação já esteja implementada localmente.
@@ -41,7 +41,7 @@ A expressão deve apoiar o estado da interação, sem sugerir emoções humanas 
 
 ### 4.1 Personagem
 
-Computador antropomórfico pequeno, retangular e vertical, com cantos arredondados, tela frontal integrada na parte superior, controles físicos abaixo ou ao redor da tela, braços laterais simples e pernas curtas. A especificação detalhada está em [CHARACTER_SPECIFICATION.md](CHARACTER_SPECIFICATION.md).
+Videogame portátil retrô de emulação, vertical e com cantos arredondados. Tem tela 4:3 na metade superior, onde aparece o rosto em pixels vermelhos, cruz direcional, quatro botões de ação, dois analógicos e gatilhos de ombro. Não tem membros e fica apoiado num suporte inclinado. A especificação detalhada está em [CHARACTER_SPECIFICATION.md](CHARACTER_SPECIFICATION.md).
 
 ### 4.2 Símbolo
 
@@ -52,7 +52,7 @@ O desenho vetorial definitivo ainda precisa ser produzido e revisado. Não infer
 ### 4.3 Logotipo
 
 Grafia principal: `d-BMO`.  
-Identificação complementar: `DARK BMO`.
+Identificação complementar (forma por extenso): `BE MORE DARK`.
 
 Não distorcer caracteres, inventar variações ortográficas ou alterar o slogan. Versões horizontal, vertical, monocromática e reduzida devem derivar do mesmo desenho-mestre.
 

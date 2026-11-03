@@ -1,8 +1,8 @@
-# STATUS — Estado verificável do BMO
+# STATUS — Estado verificável do d-BMO
 
 - **Data desta revisão:** 2026-11-02
-- **Repositório:** `resende-g/BMO`
-- **Branch de atualização documental:** `docs/model-lab-qlora-smoke-20261102`
+- **Repositório:** `resende-g/d-BMO`
+- **Branch:** `main` (atualização via PR #2, `docs/model-lab-qlora-smoke-20261102`, já mergeado)
 - **Estado geral:** documentação arquitetural publicada; código de aplicação e scripts do protótipo continuam fora da árvore Git consultada.
 - **Modelo-base definitivo:** ainda não selecionado.
 - **Limite da inspeção:** esta atualização registra resultados fornecidos pelo mantenedor e inspeciona arquivos da branch remota. Não inspeciona o clone local, arquivos não rastreados, logs locais ou integridade dos artefatos locais.
@@ -18,7 +18,7 @@ As funcionalidades descritas nos documentos arquiteturais são propostas ou prot
 | Componente/capacidade | Estado | Evidência e limite |
 |---|---|---|
 | Documentação arquitetural | Publicada | Documentos Markdown na branch principal |
-| d-BMO | Planejado | Nenhuma implementação de interface versionada |
+| d-BMO Interface | Planejado | Nenhuma implementação de interface versionada |
 | BMO Brain | Planejado | Nenhuma implementação de orquestração versionada |
 | BMO Heart | Planejado | Nenhuma implementação versionada; dados pessoais não devem ser publicados |
 | BMO Knowledge | Protótipo externo relatado; integração versionada planejada | Scripts externos não estão no repositório; RAG ainda precisa de avaliação reproduzível |
@@ -27,8 +27,9 @@ As funcionalidades descritas nos documentos arquiteturais são propostas ou prot
 | Ollama | Testado historicamente | Runtime e versão atuais não revalidados nesta revisão |
 | Docker | Planejado | Nenhuma configuração encontrada |
 | NetBird | Configurado historicamente | Conectividade atual não revalidada |
+| d-BMO-body (corpo físico) | Hardware em montagem; integração planejada | Repositório próprio ([resende-g/d-BMO-body](https://github.com/resende-g/d-BMO-body)); modo agente não implementado |
 | Skills | Planejado | Nenhum executor versionado |
-| Licença | Pendente | Decisão ainda não registrada |
+| Licença | Definida | Apache-2.0 para código e documentação; nome, logotipo e personagem excluídos (§6) |
 
 ## 3. Experimentos de modelos
 
@@ -57,7 +58,7 @@ Foi concluído um teste técnico de QLoRA no Qwen3-1.7B e uma avaliação explor
 
 **Ressalva metodológica:** a avaliação A/B utilizou tokenizer/template diferentes entre condições: o tokenizer do modelo-base em A_base e o tokenizer salvo no diretório do adapter em B_adapter. Como o adapter contém um template personalizado para treinamento, a comparação está confundida e não permite atribuir diferenças ao LoRA. Além disso, respostas foram truncadas pelo limite de 220 tokens. A avaliação deve ser repetida com tokenizer/template idênticos e limite de geração maior.
 
-O Qwen3-1.7B foi utilizado apenas como base experimental para validar o pipeline. **Não é o modelo-base definitivo do BMO.** O JSON integral, o dataset e o adapter permanecem locais; não foram publicados no repositório.
+O Qwen3-1.7B foi utilizado apenas como base experimental para validar o pipeline. **Não é o modelo-base definitivo do d-BMO.** O JSON integral, o dataset e o adapter permanecem locais; não foram publicados no repositório.
 
 Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smoke.md).
 
@@ -72,7 +73,7 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 7. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
 8. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada.
 9. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
-10. **Licença:** decisão pendente; não presumir licença do projeto ou compatibilidade de dependências.
+10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. O personagem deriva visualmente de BMO (*Hora de Aventura*, Cartoon Network); avaliar redesenho original antes de publicar ativos visuais.
 
 ## 5. Próximas ações
 
@@ -84,7 +85,8 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 - [ ] Versionar somente código e fixtures autorizados.
 - [ ] Executar avaliação RAG controlada e documentar resultados.
 - [ ] Testar restauração de backup.
-- [ ] Selecionar licença e revisar dependências antes de publicação.
+- [x] Selecionar licença (Apache-2.0).
+- [ ] Revisar licenças das dependências antes de publicação.
 
 ## 6. Proveniência
 

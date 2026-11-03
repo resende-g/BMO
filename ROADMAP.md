@@ -1,4 +1,4 @@
-# Roadmap do Beemon (BMO)
+# Roadmap do d-BMO
 
 Este roadmap organiza a evolução em marcos verificáveis. A sequência é uma referência: não obriga implementar todos os módulos antes de validar o MVP documental.
 
@@ -26,7 +26,7 @@ Tarefas:
 - [x] Inspecionar árvore pública e documentação atual do GitHub.
 - [ ] Conferir clone local, branch, `git status`, arquivos rastreados e diferenças não publicadas.
 - [ ] Revisar logs e artefatos locais antes de qualquer publicação.
-- [ ] Definir licença do projeto.
+- [x] Definir licença do projeto (Apache-2.0).
 
 **Conclusão:** inventário datado, riscos identificados, backup restaurável e repositório sem dados privados.
 
@@ -51,7 +51,7 @@ Tarefas:
 - [ ] Definir contratos de sessão, inferência, ferramenta e erro.
 - [ ] Construir um fluxo simples de solicitação-resposta.
 - [ ] Avaliar Hermes em ambiente de teste.
-- [ ] Implementar adaptador sem acoplar o domínio BMO ao framework.
+- [ ] Implementar adaptador sem acoplar o domínio d-BMO ao framework.
 - [ ] Validar tool calls e limites de iteração.
 
 **Conclusão:** uma tarefa simples executada ponta a ponta, com runtime substituível e sem permissão implícita para operações sensíveis.
@@ -102,7 +102,7 @@ Tarefas:
 
 ## M6 — Interface e evolução
 
-**Objetivo:** desenvolver d-BMO e melhorar a experiência integrada.
+**Objetivo:** desenvolver a d-BMO Interface e melhorar a experiência integrada.
 
 Tarefas:
 - [ ] Definir API local do Brain.

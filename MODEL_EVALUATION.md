@@ -74,7 +74,7 @@ Hardware informado: Ryzen 3 3300X, GTX 1050 Ti 4 GB e 24 GB RAM. Candidatos regi
 
 Esses nomes são candidatos históricos, não recomendação definitiva. Confirmar tags e quantizações disponíveis no runtime antes de executar. A avaliação deve medir CPU offload, memória e velocidade real no equipamento.
 
-O Qwen3-1.7B utilizado no smoke test de 2026-11-02 não foi selecionado como modelo-base definitivo do BMO.
+O Qwen3-1.7B utilizado no smoke test de 2026-11-02 não foi selecionado como modelo-base definitivo do d-BMO.
 
 ## 8. Fine-tuning, LoRA e QLoRA
 
