@@ -73,7 +73,7 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 7. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
 8. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada.
 9. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
-10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. O personagem deriva visualmente de BMO (*Hora de Aventura*, Cartoon Network); avaliar redesenho original antes de publicar ativos visuais.
+10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. O d-BMO possui conceito, personagem e identidade visual próprios, desenvolvidos independentemente. Não é derivado, adaptação ou extensão do personagem BMO de *Adventure Time* (*Hora de Aventura*), nem possui vínculo ou associação com a franquia ou seus titulares. Manter a documentação de autoria e a verificação de direitos dos ativos visuais.
 
 ## 5. Próximas ações
 
@@ -87,6 +87,7 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 - [ ] Testar restauração de backup.
 - [x] Selecionar licença (Apache-2.0).
 - [ ] Revisar licenças das dependências antes de publicação.
+- [ ] Manter documentadas a autoria independente e a proveniência dos ativos originais do d-BMO.
 
 ## 6. Proveniência
 
