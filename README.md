@@ -35,7 +35,7 @@ A arquitetura proposta separa responsabilidades:
 | BMO Heart | Memória pessoal persistente, revisável e auditável | Planejado |
 | BMO Knowledge | Ingestão, indexação e recuperação documental (RAG) | Planejado |
 | BMO Model Lab | Avaliação e experimentação de modelos | Protocolo documentado; smoke test QLoRA registrado, harness não versionado |
-| Adaptador Hermes | Integração opcional com infraestrutura de agente | Em avaliação |
+| Adaptador Hermes | Integração opcional com infraestrutura de agente | Em uso experimental como perfil `dbmo` ([integrations/hermes](integrations/hermes/README.md)) |
 | Ollama | Primeiro runtime candidato para inferência local | Testado historicamente; integração no repositório não implementada |
 | Docker | Isolamento de ferramentas e tarefas | Planejado |
 | NetBird | Conectividade privada para acesso remoto | Configurado historicamente; estado atual não revalidado |

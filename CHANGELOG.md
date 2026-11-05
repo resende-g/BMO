@@ -2,6 +2,18 @@
 
 Mudanças relevantes do projeto e da documentação. Este arquivo não substitui o histórico Git.
 
+## [2026-11-05] — Perfil d-BMO no Hermes Agent
+
+### Adicionado
+- `integrations/hermes/`: `SOUL.md` do d-BMO, `config.dbmo.yaml` (modelo local, aprovação manual, bloqueios de comando, escrita restrita ao perfil) e a skill `dbmo-projeto`. O d-BMO passa a rodar como perfil `dbmo` do Hermes v0.22.7 (`b200f5bc`).
+- Modelo local escolhido por medição: Qwen3.5-9B Q4_K_M num `llama-server` (llama.cpp, Metal, 64K de contexto). Granite 4.0 H Tiny e Colibri foram descartados. As medições estão no README da integração.
+- `llama-server` como agente do launchd, com sono por ociosidade (7,3 GB → 50 MB após 10 min sem uso).
+- Telegram pelo gateway do Hermes, com allowlist e `unauthorized_dm_behavior: decline`.
+- Google Agenda (em andamento): a skill `google-workspace` fica restrita ao escopo de agenda.
+
+### Alterado
+- Adaptador Hermes: de "Em avaliação" para "Em uso experimental" no `README.md` e na seção 4.3 da `ARCHITECTURE.md`.
+
 ## [2026-11-02] — Nome do projeto e consistência documental
 
 ### Alterado

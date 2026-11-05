@@ -77,7 +77,7 @@ Começar com um único processo e um fluxo de execução previsível. Planejamen
 
 ### 4.3 Adaptador de agente / Hermes
 
-**Estado:** Em avaliação.
+**Estado:** Em uso experimental. O d-BMO roda como perfil do Hermes v0.22.7 (`b200f5bc`); configuração, SOUL e skills em [integrations/hermes](integrations/hermes/README.md).
 
 Hermes pode fornecer infraestrutura de agente, ferramentas e skills. A integração deve ocorrer por adaptador, atrás de uma interface interna do d-BMO. O Hermes não é a identidade do d-BMO nem autoridade sobre memória e política.
 

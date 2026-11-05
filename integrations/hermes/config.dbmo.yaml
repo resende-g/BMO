@@ -1,0 +1,69 @@
+# Referência da config do perfil `dbmo` do Hermes Agent (v0.22.7, b200f5bc).
+# Copiar estas chaves para ~/.hermes/profiles/dbmo/config.yaml. O Hermes
+# completa o resto com os padrões dele. Sem segredos aqui: tokens ficam no
+# .env do perfil.
+
+model:
+  # llama-server externo (Homebrew) em 127.0.0.1:8080, que o Hermes detecta
+  # sozinho. Qwen3.5-9B: híbrido (só 8 de 32 camadas guardam KV), então os
+  # 64K de contexto exigidos pelo Hermes cabem em 16 GB. Medição no README.
+  provider: llamacpp
+  default: qwen3.5-9b
+
+auth:
+  # Padrão do Hermes é true: o perfil adotaria o login do Claude Code da
+  # máquina. Desligado para nada pessoal passar por conta alheia.
+  # Atenção: em modo perfil, o ~/.hermes/auth.json do perfil principal é
+  # reserva de leitura para todo provider sem credencial no perfil. Por isso
+  # `anthropic` aparece em `dbmo auth list`. Não rodar `dbmo auth remove`
+  # (apagaria no perfil principal) e nunca escolher `anthropic` em
+  # `dbmo model` ou `/model`. Com provider fixo, tarefas auxiliares não caem
+  # em outro provider (o Hermes recusa adivinhar).
+  adopt_external_logins: false
+
+approvals:
+  mode: manual        # comando perigoso sempre pede autorização (Policy Gate)
+  cron_mode: deny     # rotina agendada nunca aprova sozinha
+  # ponytail: deny filtra comandos do terminal, não é sandbox (read_file ainda
+  # lê fora do perfil). Isolamento real: terminal.backend docker ou usuário
+  # separado, quando o d-BMO for para o Ubuntu.
+  deny:
+    - 'claude*'
+    - 'hermes*'
+    - 'gcloud*'
+    - 'bq *'
+    - 'kubectl*'
+    - 'security *'
+    - '*/.claude/*'
+    - '*/.claude.json*'
+    - '*/.config/gcloud*'
+    - '*/Library/Keychains*'
+    - '*/.hermes/.env*'
+    - '*/.hermes/auth.json*'
+    - '*/.hermes/memories/*'
+    - '*/.hermes/state.db*'
+    - '*/.hermes/sessions/*'
+    - '*harness/brain*'
+
+skills:
+  # Skills versionadas neste repositório (somente leitura para o Hermes).
+  external_dirs:
+    - /Users/BMO/integrations/hermes/skills
+  creation_nudge_interval: 0   # sem sugestão de criar skill: prompt menor
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+
+# Só as ferramentas que o d-BMO usa. Cada schema entra no prompt; com modelo
+# local o prompt pesa no tempo da primeira resposta (48,9 KB → 30,5 KB).
+platform_toolsets:
+  cli: [clarify, cronjob, file, memory, session_search, skills, terminal, todo, web]
+  telegram: [clarify, cronjob, file, memory, session_search, skills, terminal, todo, web]
+
+platforms:
+  telegram:
+    # Só o user id em TELEGRAM_ALLOWED_USERS (.env do perfil) fala com o bot.
+    # Padrão do Hermes é `pair` (estranho recebe código para pedir acesso);
+    # `decline` responde uma vez e depois silencia.
+    unauthorized_dm_behavior: decline
