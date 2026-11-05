@@ -73,7 +73,7 @@ Detalhes: [registro do experimento](experiments/2026-11-02-qwen3-1.7b-qlora-smok
 7. **Backup:** há registro histórico de cópia para disco externo, mas restauração não demonstrada.
 8. **Acesso remoto:** NetBird/SSH foi configurado historicamente; conectividade deve ser revalidada.
 9. **Ambiente:** hardware e versões são referências informadas pelo mantenedor, não medições executadas nesta revisão.
-10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. O d-BMO possui conceito, personagem e identidade visual próprios, desenvolvidos independentemente. Não é derivado, adaptação ou extensão do personagem BMO de *Adventure Time* (*Hora de Aventura*), nem possui vínculo ou associação com a franquia ou seus titulares. Manter a documentação de autoria e a verificação de direitos dos ativos visuais.
+10. **Licença e propriedade intelectual:** projeto sob Apache-2.0; compatibilidade de dependências ainda deve ser verificada por versão. Desde 2026-11-02, o d-BMO adota personagem e identidade visual próprios, especificados em `docs/brand/CHARACTER_SPECIFICATION.md`; o visual anterior, inspirado no personagem BMO de *Adventure Time* (Cartoon Network / Warner Bros. Discovery), foi abandonado e suas imagens removidas da árvore atual. O projeto não é afiliado, patrocinado nem endossado pela franquia ou seus titulares. Pendências: verificar o risco associado à semelhança do nome "BMO" (projeto e módulos internos) e manter registro de autoria e de direitos de cada ativo visual em `docs/brand/assets/`.
 
 ## 5. Próximas ações
 
