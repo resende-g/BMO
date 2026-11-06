@@ -21,7 +21,8 @@ Ao atualizar o Hermes, registre a versão nova aqui e repita a verificação aba
 | `SOUL.md` | identidade e regras do d-BMO; o perfil aponta para ele por symlink |
 | `config.dbmo.yaml` | chaves de config do perfil (modelo local, política de aprovação, bloqueios, skills) |
 | `skills/` | skills do d-BMO, lidas pelo Hermes via `skills.external_dirs` |
-| `skins/dbmo.yaml` | visual do CLI e do app (paleta, rostos no spinner, logo e rosto IDLE no banner); o perfil aponta para ele por symlink |
+| `skins/dbmo.yaml` | visual do CLI (paleta, rostos no spinner, logo e rosto IDLE no banner); o perfil aponta para ele por symlink |
+| `desktop-theme.dbmo.json` | tema do app desktop, aplicado só ao perfil `dbmo` (o perfil principal mantém o tema dele) |
 
 Nada aqui contém segredo nem dado pessoal. Tokens (Telegram, OAuth do Google) ficam no `.env` e na pasta do perfil, fora do git. Rotinas agendadas com prompt pessoal (por exemplo, o briefing diário) ficam só no cron do perfil.
 
@@ -33,6 +34,16 @@ P=~/.hermes/profiles/dbmo
 { cat integrations/hermes/config.dbmo.yaml; echo '_config_version: 52'; } > "$P/config.yaml"
 rm "$P/SOUL.md" && ln -s "$PWD/integrations/hermes/SOUL.md" "$P/SOUL.md"
 mkdir -p "$P/skins" && ln -s "$PWD/integrations/hermes/skins/dbmo.yaml" "$P/skins/dbmo.yaml"
+
+# Tema do app desktop só no perfil dbmo, gravado nas preferências da máquina
+# pelo escritor do próprio Hermes. O app carrega tema novo ao abrir.
+PY=$(~/.hermes/hermes-agent/.hermes/bin/hermes --print-runtime-command | python3 -c 'import json,sys; print(json.load(sys.stdin)[0])')
+"$PY" -I -c "import sys,json; sys.path.insert(0,'$HOME/.hermes/hermes-agent'); import hermes_bootstrap
+from hermes_cli.ui_preferences import read_preferences as r, write_preferences as w
+v=r()['values']; g=lambda k: json.loads(v.get(k) or '{}'); t=json.load(open('integrations/hermes/desktop-theme.dbmo.json'))
+w({'hermes-desktop-user-themes-v1': json.dumps({**g('hermes-desktop-user-themes-v1'), 'dbmo': t}),
+   'hermes-desktop-profile-themes-v1': json.dumps({**g('hermes-desktop-profile-themes-v1'), 'dbmo': 'dbmo'}),
+   'hermes-desktop-profile-modes-v1': json.dumps({**g('hermes-desktop-profile-modes-v1'), 'dbmo': 'dark'})})"
 printf 'HERMES_WRITE_SAFE_ROOT=%s\n' "$P" >> "$P/.env"
 
 # Modelo local: llama.cpp com Metal. GGUFs ficam em ~/.hermes/models (pasta da

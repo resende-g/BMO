@@ -11,6 +11,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - Telegram pelo gateway do Hermes, com allowlist e `unauthorized_dm_behavior: decline`.
 - Google Agenda (em andamento): a skill `google-workspace` fica restrita ao escopo de agenda.
 - Skin `dbmo` (`integrations/hermes/skins/dbmo.yaml`, 2026-11-06): paleta dos design tokens, rostos dos estados do personagem no spinner, logo d-BMO e o rosto IDLE do firmware do d-BMO-body no banner do CLI.
+- Tema do app desktop (`integrations/hermes/desktop-theme.dbmo.json`, 2026-11-06), aplicado só ao perfil `dbmo`.
 
 ### Alterado
 - Adaptador Hermes: de "Em avaliação" para "Em uso experimental" no `README.md` e na seção 4.3 da `ARCHITECTURE.md`.
