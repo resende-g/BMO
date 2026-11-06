@@ -11,7 +11,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - Telegram pelo gateway do Hermes, com allowlist e `unauthorized_dm_behavior: decline`.
 - Google Agenda (em andamento): a skill `google-workspace` fica restrita ao escopo de agenda.
 - Skin `dbmo` (`integrations/hermes/skins/dbmo.yaml`, 2026-11-06): paleta dos design tokens, rostos dos estados do personagem no spinner, logo d-BMO e o rosto IDLE do firmware do d-BMO-body no banner do CLI.
-- Tema do app desktop (`integrations/hermes/desktop-theme.dbmo.json`, 2026-11-06): fundo prata espelhado, botões de vidro, vermelho sinal (texto pequeno em `#A51B27` para contraste) e o rosto do d-BMO no pé da barra lateral, trocando de reação num ciclo de 33,5 s com os quadros do firmware. Sem animação com `prefers-reduced-motion`. Gerado por `gerar_tema_desktop.py`.
+- Tema do app desktop (`integrations/hermes/desktop-theme.dbmo.json`, 2026-11-06): fundo prata espelhado, botões de vidro, texto todo em preto `#090A0C`, vermelho sinal nos destaques (texto pequeno em `#A51B27` para contraste) e o rosto do d-BMO no pé da barra lateral, trocando de reação num ciclo de 33,5 s com os quadros do firmware. Sem animação com `prefers-reduced-motion`. Gerado por `gerar_tema_desktop.py`.
 - Avatar do bot `dbmo` (`integrations/hermes/avatar-dbmo.png`, 2026-11-06): o rosto IDLE do firmware no lugar do rosto azul da aba Bots, gerado pelo mesmo script.
 
 ### Alterado

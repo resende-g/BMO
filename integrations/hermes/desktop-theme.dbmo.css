@@ -2,10 +2,11 @@
 :root {
   /* Só a superfície do chat fica transparente para o espelho aparecer; janelas, menus e cartões continuam opacos. */
   --ui-chat-surface-background: transparent;
-  /* Textos cinza mais fortes que o padrão, para ler bem sobre o espelho. */
-  --ui-text-secondary: color-mix(in srgb, #16181B 84%, transparent);
-  --ui-text-tertiary: color-mix(in srgb, #16181B 70%, transparent);
-  --ui-text-quaternary: color-mix(in srgb, #16181B 56%, transparent);
+  /* Todo texto em preto sólido: cinza sobre o espelho prata fica ilegível. */
+  --ui-text-primary: #090A0C;
+  --ui-text-secondary: #090A0C;
+  --ui-text-tertiary: #090A0C;
+  --ui-text-quaternary: #090A0C;
   --dbmo-glass: rgb(255 255 255 / 0.3);
   --dbmo-glass-strong: rgb(255 255 255 / 0.5);
   --dbmo-glass-edge: inset 0 0 0 1px rgb(255 255 255 / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.85), inset 0 -1px 0 rgb(36 39 43 / 0.1);

@@ -61,10 +61,10 @@ css = (open(css_in).read().replace("SPRITE_W", f"{n*100}%").replace("SPRITE", ur
        .replace("DURATION", f"{total:.1f}").replace("KEYFRAMES", "@keyframes dbmo-face {\n" + "\n".join(kf) + "\n}"))
 
 palette = {
-    "background": "#D5D7D9", "foreground": "#16181B", "card": "#E3E5E7", "cardForeground": "#16181B",
-    "muted": "#C9CDD1", "mutedForeground": "#4A4F55", "popover": "#ECEEF0", "popoverForeground": "#16181B",
-    "primary": "#D92332", "primaryForeground": "#FFFFFF", "secondary": "#E2C9CC", "secondaryForeground": "#16181B",
-    "accent": "#E4D2D4", "accentForeground": "#16181B", "border": "#AEB3B8", "input": "#E9EBED",
+    "background": "#D5D7D9", "foreground": "#090A0C", "card": "#E3E5E7", "cardForeground": "#090A0C",
+    "muted": "#C9CDD1", "mutedForeground": "#090A0C", "popover": "#ECEEF0", "popoverForeground": "#090A0C",
+    "primary": "#D92332", "primaryForeground": "#FFFFFF", "secondary": "#E2C9CC", "secondaryForeground": "#090A0C",
+    "accent": "#E4D2D4", "accentForeground": "#090A0C", "border": "#AEB3B8", "input": "#E9EBED",
     "ring": "#D92332", "midground": "#D92332", "midgroundForeground": "#FFFFFF", "composerRing": "#D92332",
     "destructive": "#B3261E", "destructiveForeground": "#FFFFFF", "sidebarBackground": "#CDD0D3",
     "sidebarBorder": "#AEB3B8", "userBubble": "#E9EBED", "userBubbleBorder": "#C2C6CA"}
