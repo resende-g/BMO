@@ -1,0 +1,81 @@
+# Skin do perfil `dbmo` do Hermes Agent (v0.22.7). Instalação no README.
+# Cores: docs/brand/DESIGN_TOKENS.md. Rostos: os 10 estados da
+# CHARACTER_SPECIFICATION.md em texto. O banner_hero é o quadro IDLE de
+# resende-g/d-BMO-body firmware/rosto/rosto_faces.h, com meio-bloco por pixel.
+name: dbmo
+description: d-BMO (BE MORE DARK) — prata, grafite e vermelho sinal
+
+colors:
+  # background e ui_border só valem no app desktop, que converte a skin em tema.
+  background: "#090A0C"
+  ui_border: "#24272B"
+  banner_border: "#8F1722"
+  banner_title: "#D5D7D9"
+  banner_accent: "#D92332"
+  banner_dim: "#AEB3B8"
+  banner_text: "#F2F0EB"
+  ui_accent: "#D92332"
+  ui_label: "#D5D7D9"
+  ui_ok: "#4caf50"
+  ui_error: "#ef5350"
+  ui_warn: "#ffa726"
+  prompt: "#F2F0EB"
+  input_rule: "#8F1722"
+  response_border: "#D92332"
+  status_bar_bg: "#24272B"
+  status_bar_text: "#AEB3B8"
+  status_bar_strong: "#D5D7D9"
+  status_bar_dim: "#6E7378"
+  status_bar_good: "#8FBC8F"
+  status_bar_warn: "#ffa726"
+  status_bar_bad: "#D92332"
+  status_bar_critical: "#FF6B6B"
+  session_label: "#D92332"
+  session_border: "#24272B"
+  completion_menu_bg: "#24272B"
+  completion_menu_current_bg: "#8F1722"
+  selection_bg: "#8F1722"
+  shell_dollar: "#D92332"
+  voice_status_bg: "#24272B"
+
+spinner:
+  # waiting = ferramenta rodando (SCANNING, ANALYZING); thinking = modelo
+  # pensando (THINKING, CURIOUS, ANALYZING).
+  waiting_faces: ["[≡_≡]", "[▮_-]", "[-_▮]"]
+  thinking_faces: ["[0_0]", "[?_?]", "[▮_-]", "[▮_▮]"]
+  thinking_verbs:
+    - pensando
+    - escaneando
+    - analisando
+    - cruzando dados
+    - consultando o modelo local
+    - conferindo fontes
+
+branding:
+  agent_name: d-BMO
+  welcome: "d-BMO online. Inteligência local, privada por design. Escreva ou use /help."
+  goodbye: "[▮_▮] Até mais. BE MORE DARK."
+  response_label: " ▮ d-BMO "
+  prompt_symbol: "›"
+  help_header: "[?_?] Comandos"
+
+tool_prefix: "▏"
+
+banner_logo: |
+  [bold #D92332]     ██╗      [/][bold #F2F0EB]██████╗ ███╗   ███╗ ██████╗ [/]
+  [bold #D92332]     ██║      [/][bold #E4E5E4]██╔══██╗████╗ ████║██╔═══██╗[/]
+  [bold #D92332] ██████║█████╗[/][bold #D5D7D9]██████╔╝██╔████╔██║██║   ██║[/]
+  [bold #D92332]██╔══██║╚════╝[/][bold #C2C5C9]██╔══██╗██║╚██╔╝██║██║   ██║[/]
+  [bold #D92332]╚██████║      [/][bold #AEB3B8]██████╔╝██║ ╚═╝ ██║╚██████╔╝[/]
+  [bold #D92332] ╚═════╝      [/][bold #8F949A]╚═════╝ ╚═╝     ╚═╝ ╚═════╝ [/]
+  [#D92332]                   B E   M O R E   D A R K[/]
+
+banner_hero: |
+  [#AEB3B8]╭──────────────────────────────────╮[/]
+  [#AEB3B8]│[/] [#D92332]                                [/] [#AEB3B8]│[/]
+  [#AEB3B8]│[/] [#D92332]        ▄▄▄▄        ▄▄▄▄        [/] [#AEB3B8]│[/]
+  [#AEB3B8]│[/] [#D92332]        ████        ████        [/] [#AEB3B8]│[/]
+  [#AEB3B8]│[/] [#D92332]                                [/] [#AEB3B8]│[/]
+  [#AEB3B8]│[/] [#D92332]          ▀▀▄▄▄▄▄▄▄▄▀▀          [/] [#AEB3B8]│[/]
+  [#AEB3B8]│[/] [#D92332]                                [/] [#AEB3B8]│[/]
+  [#AEB3B8]╰──────────────────────────────────╯[/]
