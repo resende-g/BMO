@@ -21,6 +21,7 @@ Ao atualizar o Hermes, registre a versão nova aqui e repita a verificação aba
 | `SOUL.md` | identidade e regras do d-BMO; o perfil aponta para ele por symlink |
 | `config.dbmo.yaml` | chaves de config do perfil (modelo local, política de aprovação, bloqueios, skills) |
 | `skills/` | skills do d-BMO, lidas pelo Hermes via `skills.external_dirs` |
+| `skins/dbmo.yaml` | visual do CLI e do app (paleta, rostos no spinner, logo e rosto IDLE no banner); o perfil aponta para ele por symlink |
 
 Nada aqui contém segredo nem dado pessoal. Tokens (Telegram, OAuth do Google) ficam no `.env` e na pasta do perfil, fora do git. Rotinas agendadas com prompt pessoal (por exemplo, o briefing diário) ficam só no cron do perfil.
 
@@ -31,6 +32,7 @@ hermes profile create dbmo --no-skills --description "Assistente pessoal d-BMO"
 P=~/.hermes/profiles/dbmo
 { cat integrations/hermes/config.dbmo.yaml; echo '_config_version: 52'; } > "$P/config.yaml"
 rm "$P/SOUL.md" && ln -s "$PWD/integrations/hermes/SOUL.md" "$P/SOUL.md"
+mkdir -p "$P/skins" && ln -s "$PWD/integrations/hermes/skins/dbmo.yaml" "$P/skins/dbmo.yaml"
 printf 'HERMES_WRITE_SAFE_ROOT=%s\n' "$P" >> "$P/.env"
 
 # Modelo local: llama.cpp com Metal. GGUFs ficam em ~/.hermes/models (pasta da

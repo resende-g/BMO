@@ -10,6 +10,7 @@ Mudanças relevantes do projeto e da documentação. Este arquivo não substitui
 - `llama-server` como agente do launchd, com sono por ociosidade (7,3 GB → 50 MB após 10 min sem uso).
 - Telegram pelo gateway do Hermes, com allowlist e `unauthorized_dm_behavior: decline`.
 - Google Agenda (em andamento): a skill `google-workspace` fica restrita ao escopo de agenda.
+- Skin `dbmo` (`integrations/hermes/skins/dbmo.yaml`, 2026-11-06): paleta dos design tokens, rostos dos estados do personagem no spinner, logo d-BMO e o rosto IDLE do firmware do d-BMO-body no banner do CLI.
 
 ### Alterado
 - Adaptador Hermes: de "Em avaliação" para "Em uso experimental" no `README.md` e na seção 4.3 da `ARCHITECTURE.md`.

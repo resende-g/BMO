@@ -45,6 +45,9 @@ approvals:
     - '*/.hermes/sessions/*'
     - '*harness/brain*'
 
+display:
+  skin: dbmo   # skins/dbmo.yaml, instalado por symlink (README)
+
 skills:
   # Skills versionadas neste repositório (somente leitura para o Hermes).
   external_dirs:
