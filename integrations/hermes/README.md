@@ -22,7 +22,9 @@ Ao atualizar o Hermes, registre a versão nova aqui e repita a verificação aba
 | `config.dbmo.yaml` | chaves de config do perfil (modelo local, política de aprovação, bloqueios, skills) |
 | `skills/` | skills do d-BMO, lidas pelo Hermes via `skills.external_dirs` |
 | `skins/dbmo.yaml` | visual do CLI (paleta, rostos no spinner, logo e rosto IDLE no banner); o perfil aponta para ele por symlink |
-| `desktop-theme.dbmo.json` | tema do app desktop, aplicado só ao perfil `dbmo` (o perfil principal mantém o tema dele) |
+| `desktop-theme.dbmo.json` | tema do app desktop (gerado): fundo prata espelhado, botões de vidro, vermelho sinal e o rosto animado no pé da barra lateral |
+| `desktop-theme.dbmo.css`, `gerar_tema_desktop.py` | fonte do CSS do tema e o gerador, que monta o sprite dos rostos e o avatar a partir de `d-BMO-body/firmware/rosto/rosto_faces.h` |
+| `avatar-dbmo.png` | avatar do bot `dbmo` na aba Bots (gerado); enviar pelo app em Bots > botão direito no bot > Edit… > Upload |
 
 Nada aqui contém segredo nem dado pessoal. Tokens (Telegram, OAuth do Google) ficam no `.env` e na pasta do perfil, fora do git. Rotinas agendadas com prompt pessoal (por exemplo, o briefing diário) ficam só no cron do perfil.
 
@@ -35,8 +37,10 @@ P=~/.hermes/profiles/dbmo
 rm "$P/SOUL.md" && ln -s "$PWD/integrations/hermes/SOUL.md" "$P/SOUL.md"
 mkdir -p "$P/skins" && ln -s "$PWD/integrations/hermes/skins/dbmo.yaml" "$P/skins/dbmo.yaml"
 
-# Tema do app desktop só no perfil dbmo, gravado nas preferências da máquina
-# pelo escritor do próprio Hermes. O app carrega tema novo ao abrir.
+# Tema do app desktop, gravado nas preferências da máquina pelo escritor do
+# próprio Hermes e atribuído ao perfil dbmo. O app carrega tema novo ao abrir.
+# Depois de mexer no CSS ou nos rostos, gerar de novo:
+#   python3 integrations/hermes/gerar_tema_desktop.py ~/d-BMO-body/firmware/rosto/rosto_faces.h
 PY=$(~/.hermes/hermes-agent/.hermes/bin/hermes --print-runtime-command | python3 -c 'import json,sys; print(json.load(sys.stdin)[0])')
 "$PY" -I -c "import sys,json; sys.path.insert(0,'$HOME/.hermes/hermes-agent'); import hermes_bootstrap
 from hermes_cli.ui_preferences import read_preferences as r, write_preferences as w
